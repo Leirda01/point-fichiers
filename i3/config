@@ -135,6 +135,7 @@ mode "resize" {
 bindsym $mod+o mode "resize"
 
 # i3 colors
+# Would be interesting to use set_from_resource $var res fallback in the future.
 # class                 border  backgr. text    indicator child_border
 client.focused          #285577 #285577 #ffffff #2e9ef4   #285577
 client.focused_inactive #5f676a #5f676a #ffffff #484e50   #5f676a
