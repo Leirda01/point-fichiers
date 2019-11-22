@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 set nocompatible
 set number
 set showcmd
@@ -27,5 +29,3 @@ set list
 
 cnoremap q  cq
 cnoremap q! cq
-
-execute pathogen#infect()
