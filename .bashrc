@@ -4,7 +4,7 @@
 # Define some user aliases…
 alias ls='ls --color=auto --group-directories-first'
 alias tree='tree -C --dirsfirst'
-alias journal='.config/dotfiles/.journal'
+alias journal='$HOME/.config/dotfiles/.journal'
 alias exercism='$HOME/exercism/bin/exercism'
 
 PS1='[\u@\h \W]\$ '
