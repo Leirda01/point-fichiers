@@ -43,10 +43,8 @@ bindsym $mod+Shift+S move down
 bindsym $mod+Shift+R move up
 bindsym $mod+Shift+N move right
 
-# split in horizontal orientation
+# Horizontal or Vertical split
 bindsym $mod+c split h
-
-# split in vertical orientation
 bindsym $mod+period split v
 
 # enter fullscreen mode for the focused container
@@ -71,6 +69,9 @@ bindsym $mod+a focus parent
 
 # default mode for i3 is tabbed
 workspace_layout tabbed 
+
+# Don’t bother me marking windows as urgent
+focus_on_window_activation none
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
