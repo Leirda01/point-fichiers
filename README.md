@@ -1,4 +1,4 @@
-# Sources :
+## Sources :
 
 * [Taille de la police dans le terminal (`.urxvt/perl`)](https://artisan.karma-lab.net/modifier-taille-polices-durxvt)
 
