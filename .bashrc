@@ -21,5 +21,4 @@ unset _entry
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
-# unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history/18443#18443
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
