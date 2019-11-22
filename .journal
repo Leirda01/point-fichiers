@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+[[ $1 ]] && journal="$HOME/saveuriendir/${1%%.*}.md" || journal="$HOME/saveuriendir/$(date +%Y/%m/%d.md)"
+
+[[ -e $journal ]] && (echo édition du journal existant $journal; chmod u+w $journal) || echo édition d’un nouveau journal $journal;
+
+vim "$journal"
+
+[[ -e $journal ]] && (echo Journal édité; chmod u-w $journal) || echo Aucun journal enregistré
