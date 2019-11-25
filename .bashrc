@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# cd to previous working directory
+[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
+
 # Define some user aliases…
 alias ls='ls --color=auto --group-directories-first'
 alias tree='tree -C --dirsfirst'
@@ -8,7 +11,7 @@ alias journal='$HOME/.config/dotfiles/.journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/dotfiles'
 
-# set escape sequences
+# set escape sequences more appropriately
 black=$(   tput setaf 0)
 red=$(     tput setaf 1)
 green=$(   tput setaf 2)
@@ -20,7 +23,11 @@ white=$(   tput setaf 7)
 bold=$(    tput bold)
 reset=$(   tput sgr0)
 
-PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$\[$reset\] '
+PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$\[$red\] '
+
+# Commands to be executed before and after the prompt is displayed
+PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
+trap 'echo -n $reset' DEBUG
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do

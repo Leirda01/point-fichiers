@@ -2,7 +2,7 @@
 URxvt*geometry: 74x27
 
 ! Police TTF
-URxvt.font: xft:DejaVu Sans Mono:size=13
+URxvt.font: xft:DejaVu Sans Mono:size=14
 
 ! Options diverses
 URxvt*saveLines:   10000
@@ -30,7 +30,6 @@ URxvt*color14:    #4bb8fd
 URxvt*color15:    #a020f0
 
 URxvt.perl-lib: /home/leirda/.urxvt/perl
-
 URxvt.perl-ext-common: font-size
 
 URxvt.keysym.M-plus: perl:font-increase
