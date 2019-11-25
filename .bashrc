@@ -6,6 +6,7 @@ alias ls='ls --color=auto --group-directories-first'
 alias tree='tree -C --dirsfirst'
 alias journal='$HOME/.config/dotfiles/.journal'
 alias exercism='$HOME/exercism/bin/exercism'
+alias dot='cd $HOME/.config/dotfiles'
 
 PS1='[\u@\h \W]\$ '
 
