@@ -14,8 +14,8 @@ URxvt*foreground: #ffffff
 URxvt*background: #000000
 URxvt*color0:     #101010
 URxvt*color1:     #f13a21
-URxvt*color2:     #93f91d
-URxvt*color3:     #ffd00a
+URxvt*color2:     #ffd00a
+URxvt*color3:     #93f91d
 URxvt*color4:     #004f9e
 URxvt*color5:     #ec0048
 URxvt*color6:     #2aa7e7
