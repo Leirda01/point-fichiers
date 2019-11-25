@@ -9,17 +9,18 @@ alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/dotfiles'
 
 # set escape sequences
-black=$(tput setaf 0)
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-magenta=$(tput setaf 5)
-cyan=$(tput setaf 6)
-white=$(tput setaf 7)
-reset=$(tput sgr0)
+black=$(   tput setaf 0)
+red=$(     tput setaf 1)
+green=$(   tput setaf 2)
+yellow=$(  tput setaf 3)
+blue=$(    tput setaf 4)
+magenta=$( tput setaf 5)
+cyan=$(    tput setaf 6)
+white=$(   tput setaf 7)
+bold=$(    tput bold)
+reset=$(   tput sgr0)
 
-PS1='[\[${cyan}\]\u@\h \[${green}\]\w\[${reset}\]]$ '
+PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$\[$reset\] '
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
