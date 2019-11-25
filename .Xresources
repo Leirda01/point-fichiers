@@ -9,7 +9,7 @@ URxvt*saveLines:   10000
 URxvt*cursorColor: white
 URxvt*scrollBar:   false
 
-! Couleurs (c'est la palette Tango)
+! Couleurs (c’est la palette Tango)
 URxvt*foreground: #ffffff
 URxvt*background: #000000
 URxvt*color0:     #101010
