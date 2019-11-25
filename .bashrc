@@ -8,7 +8,18 @@ alias journal='$HOME/.config/dotfiles/.journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/dotfiles'
 
-PS1='[\u@\h \W]\$ '
+# set escape sequences
+black=$(tput setaf 0)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+blue=$(tput setaf 4)
+magenta=$(tput setaf 5)
+cyan=$(tput setaf 6)
+white=$(tput setaf 7)
+reset=$(tput sgr0)
+
+PS1='[\[${cyan}\]\u@\h \[${green}\]\w\[${reset}\]]$ '
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
@@ -18,7 +29,7 @@ for _entry in $HOME/.gem/*; do
 done
 unset _entry
 
-# Get a good, clean, history.
+# Get a good, clean, history
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
