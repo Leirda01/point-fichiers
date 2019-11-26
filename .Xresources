@@ -34,4 +34,4 @@ URxvt.perl-ext-common: font-size
 
 URxvt.keysym.M-plus: perl:font-increase
 URxvt.keysym.M-minus: perl:font-decrease
-URxvt.keysym.M-ampersand: perl:font-reset
+URxvt.keysym.M-slash: perl:font-reset

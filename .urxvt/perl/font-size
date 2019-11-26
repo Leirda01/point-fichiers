@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+
 my %original_size = ();
 
 sub on_start {
