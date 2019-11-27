@@ -3,6 +3,7 @@
 
 # cd to previous working directory
 [[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
+PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
 
 # Define some user aliases…
 alias ls='ls --color=auto --group-directories-first'
@@ -23,11 +24,7 @@ white=$(   tput setaf 7)
 bold=$(    tput bold)
 reset=$(   tput sgr0)
 
-PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$\[$red\] '
-
-# Commands to be executed before and after the prompt is displayed
-PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
-trap 'echo -n $reset' DEBUG
+PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$\[$reset\] '
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
