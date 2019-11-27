@@ -1,25 +1,20 @@
 #!/usr/bin/bash
 
-if [[ $1 ]]; then
-  date=${1%%.*}
+if [[ $(date +%H) -lt 3 ]]; then # -lt → less than
+  date=$(date --date="yesterday" +%Y/%m/%d)
 else
-  if [[ $(date +%H) -lt 3 ]]; then
-    date=$(date --date="yesterday" +%Y/%m/%d)
-  else
-    date=$(date +%Y/%m/%d)
-  fi
+  date=$(date +%Y/%m/%d)
 fi
 
 mkdir -p "$HOME/saveuriendir/$date"
 
-echo -n "Page à ouvrir ? "
-read journal
+[[ $@ ]] && journal=$@ || journal="main"
 
-[[ "$journal" = \n ]] && journal="main"
+[[ $journal = \n ]] && journal="main"
 journal="$HOME/saveuriendir/$date/$journal.md"
 
-[[ -O "$journal" ]] && chmod u+w "$journal"
+[[ -O "$journal" ]] && chmod u+w "$journal" # -O → Own
 vim "$journal"
-[[ -w "$journal" ]] && chmod u-w "$journal"
+[[ -w "$journal" ]] && chmod u-w "$journal" # -W → Write
 
-[[ -s "$journal" ]] || rm -f "$journal"
+[[ -s "$journal" ]] || rm -f "$journal" # -s → size ≠ 0
