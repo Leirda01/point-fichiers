@@ -1,20 +1,25 @@
 #!/usr/bin/bash
 
-# Define current journal
 if [[ $1 ]]; then
-  journal="$HOME/saveuriendir/${1%%.*}.md"
+  date=${1%%.*}
 else
-  journal="$HOME/saveuriendir/$(date +%Y/%m/%d.md)"
+  if [[ $(date +%H) -lt 3 ]]; then
+    date=$(date --date="yesterday" +%Y/%m/%d)
+  else
+    date=$(date +%Y/%m/%d)
+  fi
 fi
 
-# The script grant write access to user that owns it.
-if [[ -O $journal ]]; then
-  chmod u+w $journal
-fi
+mkdir -p "$HOME/saveuriendir/$date"
 
+echo -n "Page à ouvrir ? "
+read journal
+
+[[ "$journal" = \n ]] && journal="main"
+journal="$HOME/saveuriendir/$date/$journal.md"
+
+[[ -O "$journal" ]] && chmod u+w "$journal"
 vim "$journal"
+[[ -w "$journal" ]] && chmod u-w "$journal"
 
-# By default, journal is read-only
-if [[ $journal ]]; then
-  chmod u-w $journal
-fi
+[[ -s "$journal" ]] || rm -f "$journal"
