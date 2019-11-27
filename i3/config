@@ -84,19 +84,19 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10:riot" 
 
 # switch to workspace
-bindsym $mod+quotedbl workspace number $ws1
-bindsym $mod+guillemotleft workspace number $ws2
-bindsym $mod+guillemotright workspace number $ws3
-bindsym $mod+parenleft workspace number $ws4
-bindsym $mod+parenright workspace number $ws5
-bindsym $mod+at workspace number $ws6
-bindsym $mod+plus workspace number $ws7
-bindsym $mod+minus workspace number $ws8
-bindsym $mod+slash workspace number $ws9
-bindsym $mod+asterisk workspace number $ws10
+bindsym $mod+quotedbl workspace $ws1
+bindsym $mod+guillemotleft workspace $ws2
+bindsym $mod+guillemotright workspace $ws3
+bindsym $mod+parenleft workspace $ws4
+bindsym $mod+parenright workspace $ws5
+bindsym $mod+at workspace $ws6
+bindsym $mod+plus workspace $ws7
+bindsym $mod+minus workspace $ws8
+bindsym $mod+slash workspace $ws9
+bindsym $mod+asterisk workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -149,14 +149,15 @@ client.background       #ffffff
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    id                primary
-    output            LVDS1
-    status_command    i3status --config ~/.config/i3status/primary
-    font              pango:DejaVu Sans Mono, FontAwesome 8.5
-    mode              hide
-    modifier          none
-    tray_padding      0
-    separator_symbol  "‖"
+    strip_workspace_numbers yes
+    id                      primary
+    output                  LVDS1
+    status_command          i3status --config ~/.config/i3status/primary
+    font                    pango:DejaVu Sans Mono, FontAwesome 8.5
+    mode                    hide
+    modifier                none
+    tray_padding            0
+    separator_symbol        "‖"
 }
 bar {
     id                secondary
@@ -175,6 +176,8 @@ bindsym $mod+Shift+P bar mode toggle primary
 no_focus   [window_role="pop_up"]
 for_window [window_role="pop_up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+
+floating_maximum_size 0 x 0
 
 # set windows borderless by default
 default_border    none
