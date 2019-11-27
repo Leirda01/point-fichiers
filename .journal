@@ -1,9 +1,20 @@
 #!/usr/bin/bash
 
-[[ $1 ]] && journal="$HOME/saveuriendir/${1%%.*}.md" || journal="$HOME/saveuriendir/$(date +%Y/%m/%d.md)"
+# Define current journal
+if [[ $1 ]]; then
+  journal="$HOME/saveuriendir/${1%%.*}.md"
+else
+  journal="$HOME/saveuriendir/$(date +%Y/%m/%d.md)"
+fi
 
-[[ -e $journal ]] && (echo édition du journal existant $journal; chmod u+w $journal) || echo édition d’un nouveau journal $journal;
+# The script grant write access to user that owns it.
+if [[ -O $journal ]]; then
+  chmod u+w $journal
+fi
 
 vim "$journal"
 
-[[ -e $journal ]] && (echo Journal édité; chmod u-w $journal) || echo Aucun journal enregistré
+# By default, journal is read-only
+if [[ $journal ]]; then
+  chmod u-w $journal
+fi
