@@ -9,16 +9,18 @@
 
 * `journal`
 
-  - [ ] Réécrire le script en `TDD`, pour l’entraînement.
+  - [x] Réécrire complètement le script, en `TDD`, pour l’entraînement.
 
-  - [ ] Enregistrer le journal du jour dans un dossier plutôt qu’un seul
+  - [x] Enregistrer le journal du jour dans un dossier plutôt qu’un seul
     fichier.
 
-  - [ ] La nouvelle journée devrait commencer à trois heures au lieu de minuit.
+  - [x] La nouvelle journée devrait commencer à trois heures au lieu de minuit.
     Ou bien je devrais me coucher plus tôt…
 
-  - [ ] Des phrases plus concises dans le script (pour le vrai journal
+  - [x] Des phrases plus concises dans le script (pour le vrai journal
     faut que je sois plus `--verbose` au contraire!)
+
+  - _finalement il n’y aura pas eu de `TDD`…_
 
 * `i3`
 
@@ -49,8 +51,7 @@
 
   - [ ] S’occuper sérieusement des couleurs (!)
 
-  - [ ] L’exploiter son potentiel (gestion du presse-papier, de la
-    détection d’hyperlien, _etc_)…
+  - [ ] Exploiter tout son potentiel
 
 * je ne sais pas encore…
 
