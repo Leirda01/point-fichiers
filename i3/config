@@ -118,12 +118,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+X reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+O restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+BackSpace exec ( [[ $(echo -e "yes\nno" | dmenu -p "logout?") == yes ]] && i3-msg exit)
-# shutdown computer
+
+bindsym $mod+BackSpace       exec ([[ $(echo -e "yes\nno" | dmenu -p "logout?") == yes ]] && i3-msg exit)
 bindsym $mod+Shift+BackSpace exec ([[ $(echo -e "yes\nno" | dmenu -p "shutdown?") == yes ]] && shutdown now)
-# reboot computer
-bindsym $mod+mod1+BackSpace exec ([[ $(echo -e "yes\nno" | dmenu -p "reboot?") == yes ]] && reboot)
+bindsym $mod+mod1+BackSpace  exec ([[ $(echo -e "yes\nno" | dmenu -p "reboot?") == yes ]] && reboot)
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -163,14 +161,15 @@ bar {
     separator_symbol        "‖"
 }
 bar {
-    id                secondary
-    output            HDMI1
-    output            VGA1
-    status_command    i3status --config ~/.config/i3status/secondary
-    font              pango:DejaVu Sans Mono, 14
-    modifier          none
-    tray_output       none
-    separator_symbol  "‖"
+    strip_workspace_numbers yes
+    id                      secondary
+    output                  HDMI1
+    output                  VGA1
+    status_command          i3status --config ~/.config/i3status/secondary
+    font                    pango:DejaVu Sans Mono, 14
+    modifier                none
+    tray_output             none
+    separator_symbol        "‖"
 }
 
 bindsym $mod+Shift+P bar mode toggle primary
