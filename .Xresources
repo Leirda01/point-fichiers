@@ -29,7 +29,7 @@ URxvt*color13:    #ef0051
 URxvt*color14:    #4bb8fd
 URxvt*color15:    #a020f0
 
-URxvt.perl-lib: $HOME/.urxvt/perl
+URxvt.perl-lib: /home/leirda/.urxvt/perl
 URxvt.perl-ext-common: font-size
 
 URxvt.keysym.M-plus: perl:font-increase
