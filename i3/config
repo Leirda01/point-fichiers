@@ -139,11 +139,11 @@ bindsym $mod+o mode "resize"
 # i3 colors
 # Would be interesting to use set_from_resource $var res fallback in the future.
 # class                 border  backgr. text    indicator child_border
-client.focused          #285577 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #5f676a #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #222222 #222222 #888888 #292d2e   #222222
-client.urgent           #900000 #900000 #ffffff #900000   #900000
-client.placeholder      #0c0c0c #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #000000 #000000 #ffffff #2e9ef4   #000000
+client.focused_inactive #000000 #000000 #ffffff #484e50   #000000
+client.unfocused        #000000 #000000 #444444 #292d2e   #000000
+client.urgent           #000000 #000000 #ffffff #900000   #000000
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
 
 client.background       #ffffff
 
@@ -151,6 +151,7 @@ client.background       #ffffff
 # finds out, if available)
 bar {
     strip_workspace_numbers yes
+    binding_mode_indicator  no
     id                      primary
     output                  LVDS1
     status_command          i3status --config ~/.config/i3status/primary
@@ -162,6 +163,7 @@ bar {
 }
 bar {
     strip_workspace_numbers yes
+    binding_mode_indicator  no
     id                      secondary
     output                  HDMI1
     output                  VGA1
