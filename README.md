@@ -29,6 +29,14 @@
   - [ ] Gérer les déplacements de `workspaces` différemment (plus facilement le
     déplacer vers un moniteur ou l’autre).
 
+  - [ ] Profiter de la gestion modale des raccourcis de i3.
+    - [ ] Créer un mode pour gérer les workspaces.
+    - [ ] Créer un mode pour lancer des programmes.
+    - [ ] Gérer les changements et interactions entre les modes.
+
+  - [ ] Utiliser des `marks` pour naviguer facilement entre les workspaces /
+    container. Ou bien trouver un autre moyen de le faire (modal?)
+
   - [ ] Mieux gérer la détection des moniteurs (le faire automatiquement)
 
   - [ ] Gérer les touches spéciales (son, wifi, lecture-pause, lock, calculette,
