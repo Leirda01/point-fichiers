@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+PROMPT_DIRTRIM=2
+
 # cd to previous working directory
 [[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
 PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
