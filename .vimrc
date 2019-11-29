@@ -29,3 +29,5 @@ set list
 
 cnoremap q  cq
 cnoremap q! cq
+
+set formatprg=par\ 80j
