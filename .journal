@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-if [[ $(date +%H) -lt 3 ]]; then # -lt → less than
+if [[ $(date +%-H) -lt 3 ]]; then # -lt → less than
   date=$(date --date="yesterday" +%Y/%m/%d)
 else
   date=$(date +%Y/%m/%d)
