@@ -24,7 +24,8 @@ white=$(   tput setaf 7)
 bold=$(    tput bold)
 reset=$(   tput sgr0)
 
-PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$\[$reset\] '
+PS0='$reset'
+PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$\[$magenta\] '
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
