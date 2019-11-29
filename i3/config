@@ -79,8 +79,8 @@ workspace_layout tabbed
 # Don’t bother me marking windows as urgent
 focus_on_window_activation none
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+title_align center
+
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -92,7 +92,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10:riot" 
 
-# switch to workspace
 bindsym $mod+quotedbl        workspace $ws1
 bindsym $mod+guillemotleft   workspace $ws2
 bindsym $mod+guillemotright  workspace $ws3
