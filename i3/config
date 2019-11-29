@@ -7,7 +7,8 @@ set $refresh_i3status killall -SIGUSR1 i3status
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 9.5
+set $font pango:DejaVu Sans Mono 9.5
+font $font
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id redshift # Blue light filter
@@ -33,7 +34,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+B kill
 
 # start dmenu (a program launcher)
-bindsym $mod+i exec dmenu_run
+# Please use colors from Xresources another day.
+bindsym $mod+i exec dmenu_run -fn '$font' -nb '#000000' -sb '#000000' -nf '#444444' -sf '#ffffff'
 
 # change focus
 bindsym $mod+c focus left
