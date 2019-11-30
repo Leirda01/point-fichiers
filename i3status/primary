@@ -57,9 +57,8 @@ disk "/home" {
 }
 
 memory {
-        format = "%used"
+        format = "%used/%total"
         threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
 }
 
 tztime local {
