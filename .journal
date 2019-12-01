@@ -17,7 +17,7 @@ if [[ $@ ]]; then
   journal=${@%%.md}
 else
   if [[ $dir ]]; then
-    select journal in $dir; do
+    select journal in "main" "journal du midi" "journal du soir"; do
       [[ $journal ]] && break;
     done
   else
