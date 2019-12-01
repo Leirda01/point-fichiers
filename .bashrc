@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PROMPT_DIRTRIM=2
-
 # cd to previous working directory
 [[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
 PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
@@ -27,7 +25,7 @@ bold=$(    tput bold)
 reset=$(   tput sgr0)
 
 PS0='$reset'
-PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\w\[$white\]]\[$yellow\]$ \[$reset\]'
+PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
