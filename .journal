@@ -8,8 +8,23 @@ fi
 
 mkdir -p "$HOME/saveuriendir/$date"
 
+dir=$(ls "$HOME/saveuriendir/$date")
+echo $dir
+
 [[ $@ ]] && journal=$@ || journal="main"
 
+if [[ $@ ]]; then
+  journal=${@%%.md}
+else
+  if [[ $dir ]]; then
+    select journal in $dir; do
+      [[ $journal ]] && break;
+    done
+  else
+    journal="main"
+  fi
+fi
+    
 [[ $journal = \n ]] && journal="main"
 journal="$HOME/saveuriendir/$date/$journal.md"
 
