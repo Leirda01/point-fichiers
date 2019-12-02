@@ -6,12 +6,9 @@ for file in $HOME/.bashrc.d/*; do
   source $file
 done
 
-PS0='$reset'
-PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
-
 # cd to previous working directory
 [[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
-PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
+PROMPT_COMMAND="pwd > \"$HOME/.cwd\"; $PROMPT_COMMAND"
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
