@@ -7,26 +7,21 @@ else
 fi
 
 mkdir -p "$HOME/saveuriendir/$date"
-
-dir=$(ls "$HOME/saveuriendir/$date")
-echo $dir
-
-[[ $@ ]] && journal=$@ || journal="main"
+pushd "$HOME/saveuriendir/$date" > /dev/null
 
 if [[ $@ ]]; then
-  journal=${@%%.md}
+  journal=$@
 else
-  if [[ $dir ]]; then
-    select journal in "main" "journal du midi" "journal du soir"; do
+  if [[ $(ls) ]]; then
+    select journal in *; do
       [[ $journal ]] && break;
     done
   else
     journal="main"
   fi
 fi
-    
-[[ $journal = \n ]] && journal="main"
-journal="$HOME/saveuriendir/$date/$journal.md"
+
+journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
 [[ -O "$journal" ]] && chmod u+w "$journal" # -O → Own
 vim "$journal"
