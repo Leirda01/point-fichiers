@@ -14,12 +14,11 @@ if [[ $@ ]]; then
 else
   if [[ $(ls) ]]; then
     select journal in *; do
-      [[ $journal ]] && break;
+      break;
     done
-  else
-    journal="main"
   fi
 fi
+[[ $journal ]] || journal="main"
 
 journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
