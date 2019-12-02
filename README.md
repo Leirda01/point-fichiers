@@ -1,10 +1,3 @@
-## Sources :
-
-* [Taille de la police dans le terminal (`.urxvt/perl`)](https://artisan.karma-lab.net/modifier-taille-polices-durxvt)
-
-* [Historique propre et dynamique](https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history/18443#18443)
-
-
 ## À faire…
 
 * `journal`
@@ -65,3 +58,11 @@
 
   - [ ] Signale moi quand un programme me demande des permissions `sudo`, quand
     je n’ai pas le focus. Ça évitera de foutre en l’air mes MàJ de `aur`.
+
+## Sources :
+
+* [Taille de la police dans le terminal (`.urxvt/perl`)](https://artisan.karma-lab.net/modifier-taille-polices-durxvt)
+
+* [Historique propre et dynamique](https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history/18443#18443)
+
+* [Tout mettre dans un `bashrc.d/`](https://github.com/yaf/dotfiles)
