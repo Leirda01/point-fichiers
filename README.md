@@ -58,10 +58,14 @@
 
   - [ ] Exploiter tout son potentiel
 
-* je ne sais pas encore…
+* `je ne sais pas encore…`
 
   - [ ] Signale moi quand un programme me demande des permissions `sudo`, quand
     je n’ai pas le focus. Ça évitera de foutre en l’air mes MàJ de `aur`.
+
+  - [ ] __Peut-être__ rendre tout ça `POSIX Conformant` à l’occasion. Gros
+    peut-être. Quoique ça ne doit pas être si compliqué… Je ne réalise pas du
+    tout ce que ça implique.
 
 ## Sources :
 
