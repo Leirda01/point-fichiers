@@ -1,0 +1,2 @@
+PS0='$reset'
+PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'

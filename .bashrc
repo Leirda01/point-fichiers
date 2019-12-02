@@ -1,31 +1,17 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# cd to previous working directory
-[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
-PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
-
-# Define some user aliases…
-alias ls='ls --color=auto --group-directories-first'
-alias tree='tree -C --dirsfirst'
-alias journal='$HOME/.config/dotfiles/.journal'
-alias exercism='$HOME/exercism/bin/exercism'
-alias dot='cd $HOME/.config/dotfiles'
-
-# set escape sequences more appropriately
-black=$(   tput setaf 0)
-red=$(     tput setaf 1)
-green=$(   tput setaf 2)
-yellow=$(  tput setaf 3)
-blue=$(    tput setaf 4)
-magenta=$( tput setaf 5)
-cyan=$(    tput setaf 6)
-white=$(   tput setaf 7)
-bold=$(    tput bold)
-reset=$(   tput sgr0)
+# Load all the good stuff into the bash
+for file in $HOME/.bashrc.d/*; do
+  source $file
+done
 
 PS0='$reset'
 PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
+
+# cd to previous working directory
+[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
+PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
@@ -34,9 +20,3 @@ for _entry in $HOME/.gem/*; do
   fi
 done
 unset _entry
-
-# Get a good, clean, history
-export HISTSIZE=10000
-export HISTCONTROL=ignoreboth:erasedups
-shopt -s histappend
-PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
