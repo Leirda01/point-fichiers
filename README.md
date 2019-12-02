@@ -50,7 +50,7 @@
 
 * `urxvt`
 
-  - [ ] S’occuper sérieusement des couleurs (!)
+  - [ ] Met à jour les couleurs incorrects
 
   - [ ] Exploiter tout son potentiel
 
