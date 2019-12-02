@@ -13,6 +13,10 @@
   - [x] Des phrases plus concises dans le script (pour le vrai journal
     faut que je sois plus `--verbose` au contraire!)
 
+  - Une instance du journal « lock » son utilisation ailleurs. Dans le meilleur
+    des cas, appeler le `journal` quelque part alors qu’il est déjà ouvert
+    l’ouvre dans l’instance courante de bash.
+
   - _finalement il n’y aura pas eu de `TDD`…_
 
 * `i3`
@@ -50,7 +54,7 @@
 
 * `urxvt`
 
-  - [ ] Met à jour les couleurs incorrects
+  - [ ] Mettre à jour les deux-trois couleurs incorrects
 
   - [ ] Exploiter tout son potentiel
 
