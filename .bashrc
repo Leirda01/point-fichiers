@@ -6,6 +6,7 @@ unset PROMPT_COMMAND
 for file in $HOME/.bashrc.d/*; do
   source $file
 done
+unset _file
 
 # cd to previous working directory
 [[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
