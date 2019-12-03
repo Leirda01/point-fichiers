@@ -3,7 +3,7 @@
 unset PROMPT_COMMAND
 
 # Load all the good stuff into the bash
-for file in $HOME/.bashrc.d/*; do
+for file in $HOME/.config/bashrc.d/*; do
   source $file
 done
 unset _file
