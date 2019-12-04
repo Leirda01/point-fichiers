@@ -5,22 +5,22 @@ echo ========MAKE SYMLINKS========
 for config in $(ls -A); do
   case $config in
     ("setup.sh" | ".git" | "README.md") 
-      echo JUNK : $config ignored.
+      echo JUNK → $config ignored.
       ;;
     (.*)
       if [[ $config -ef $HOME/$config ]]; then
-        echo FILE : $config already there.
+        echo DOT  → $config already in $HOME
       else
         ln -s -b $(pwd)/$config $HOME
-        echo FILE : $config now in $HOME
+        echo DOT  → $config now in $HOME
       fi
       ;;
     (*)
       if [[ $config -ef $HOME/.config/$config ]]; then
-        echo DIR  : $config already there.
+        echo CONF → $config already in $HOME/.config
       else
         ln -s -b $(pwd)/$config $HOME/.config/
-        echo DIR  : $config now in $HOME
+        echo CONF → $config now in $HOME/.config
       fi
       ;;
   esac
