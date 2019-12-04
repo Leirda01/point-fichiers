@@ -1,3 +1,20 @@
+## L’installation
+
+* Exécuter les commandes suivantes dans le shell :
+  ```bash
+  cd .config;\
+  git clone git@github.com/Leirda01/point-fichiers.git &&\
+  cd point-fichiers;\
+  ./setup.sh
+  ```
+
+* L’installation génère des liens symboliques pour chacun des fichiers du dépôts
+  (sauf README.md, .git, et lui-même). Si un fichier est déjà présent, un backup
+  est créé avec le suffixe `~` (ATTENTION : écrase toute précédente backup).
+
+* Pour les fichiers cachés, le lien symbolique est créé dans `${HOME}`, tous les
+  autres dans `.config`. Ça devrait faire le taff.
+
 ## À faire…
 
 * `journal`
