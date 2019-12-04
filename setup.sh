@@ -4,7 +4,7 @@ echo ========MAKE SYMLINKS========
 
 for config in $(ls -A); do
   case $config in
-    ("setup.sh" | ".git" | "README.md") 
+    ("setup.sh" | ".git" | "README.md")
       echo JUNK → $config ignored.
       ;;
     (.*)
