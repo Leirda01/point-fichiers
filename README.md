@@ -64,10 +64,15 @@
 
   - [x] S’occuper sérieusement des couleurs.
 
-  - [ ] Créer un script de `setup` pour ce dépôt.
+  - [x] Créer un script de `setup` pour ce dépôt.
 
   - [x] Un nouveau terminal ouvert devra suivre le même chemin qu’un éventuel terminal
     parent.
+
+  - [ ] Mu-muse avec `shopt` et autres options du terminal.
+
+  - [ ] Changer la longueur du `PS1` en fonction du nombre de colonnes
+    disponible.
 
 * `urxvt`
 

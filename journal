@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 if [[ $(date +%-H) -lt 3 ]]; then # -lt → less than
   date=$(date --date="yesterday" +%Y/%m/%d)
