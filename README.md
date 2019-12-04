@@ -75,6 +75,11 @@
 
   - [ ] Exploiter tout son potentiel
 
+* `setup.sh`
+
+  - [ ] « `sed`er » tous les fichiers pour remplacer les chemins absolues et
+    autres.
+
 * `je ne sais pas encore…`
 
   - [ ] Signale moi quand un programme me demande des permissions `sudo`, quand
