@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+if [[ $(date +%-H) -lt 3 ]]; then # -lt → less than
+  date=$(date --date="yesterday" +%Y/%m/%d)
+else
+  date=$(date +%Y/%m/%d)
+fi
+
+mkdir -p "$HOME/saveuriendir/$date"
+pushd "$HOME/saveuriendir/$date" > /dev/null
+
+if [[ $@ ]]; then
+  journal=$@
+else
+  if [[ $(ls) ]]; then
+    select journal in *; do
+      break;
+    done
+  fi
+fi
+[[ $journal ]] || journal="main"
+
+journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
+
+[[ -O "$journal" ]] && chmod u+w "$journal" # -O → Own
+vim "$journal"
+[[ -w "$journal" ]] && chmod u-w "$journal" # -W → Write
+
+[[ -s "$journal" ]] || rm -f "$journal" # -s → size ≠ 0
