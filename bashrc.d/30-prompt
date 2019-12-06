@@ -1,3 +1,7 @@
 PS0='$reset'
-PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
+if [[ $COLUMNS -ge 90 ]]; then # -ge → Greater or equal than
+  PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
+else
+  PS1='\[$reset\]\[$yellow\]$ \[$reset\]'
+fi
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
