@@ -43,9 +43,10 @@
     déplacer vers un moniteur ou l’autre).
 
   - [ ] Profiter de la gestion modale des raccourcis de i3.
-    - [ ] Créer un mode pour gérer les workspaces.
-    - [ ] Créer un mode pour lancer des programmes.
-    - [ ] Gérer les changements et interactions entre les modes.
+    - [ ] Naviguer plus facilement parmi (beaucoup) de fenêtres.
+    - [ ] Utiliser les workspaces d’une manière plus dynamiques.
+    - [ ] Déplacer plus aisément un workspace d’un écran à l’autre.
+    - [ ] Réorganiser rapidement les containers selon différents critères.
 
   - [ ] Utiliser des `marks` pour naviguer facilement entre les workspaces /
     container. Ou bien trouver un autre moyen de le faire (modal?)
