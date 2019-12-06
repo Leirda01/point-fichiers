@@ -2,9 +2,9 @@
 
 * Exécuter les commandes suivantes dans le shell :
   ```bash
-  cd .config;\
-  git clone git@github.com/Leirda01/point-fichiers.git &&\
-  cd point-fichiers;\
+  cd .config;
+  git clone git@github.com/Leirda01/point-fichiers.git &&
+  cd point-fichiers;
   ./setup.sh
   ```
 
