@@ -10,7 +10,7 @@ unset _file
 
 # cd to previous working directory
 [[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
-PROMPT_COMMAND=${PROMPT_COMMAND}"; pwd > $HOME/.cwd; "
+PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }"pwd > $HOME/.cwd; "
 
 # Ruby Gem's path configuration
 for _entry in $HOME/.gem/*; do
