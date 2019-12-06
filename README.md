@@ -70,7 +70,7 @@
 
   - [ ] Mu-muse avec `shopt` et autres options du terminal.
 
-  - [ ] Changer la longueur du `PS1` en fonction du nombre de colonnes
+  - [x] Changer la longueur du `PS1` en fonction du nombre de colonnes
     disponible.
 
 * `urxvt`
