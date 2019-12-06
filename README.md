@@ -1,4 +1,4 @@
-## L’installation
+## Installation
 
 * Exécuter les commandes suivantes dans le shell :
   ```bash
@@ -11,8 +11,8 @@
   (sauf README.md, .git, et lui-même). Si un fichier est déjà présent, un backup
   est créé avec le suffixe `~` (ATTENTION : écrase toute précédente backup).
 
-* Pour les fichiers cachés, le lien symbolique est créé dans `${HOME}`, tous les
-  autres dans `.config`. Ça devrait faire le taff.
+* Pour les fichiers cachés, le lien symbolique est créé dans `$HOME`, tous les
+  autres dans `$HOME/.config`. Ça devrait faire le taff.
 
 ## À faire…
 
