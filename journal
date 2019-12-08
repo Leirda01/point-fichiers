@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
-if [[ $(pgrep -f -o .config/journal) -ne $$ ]]; then # -ne → not equal
+if [[ $(pgrep -f -o .config/journal) -ne $$ ]]; then
   echo Error script already running.
   exit 1
 fi
 
-if [[ $(date +%-H) -lt 3 ]]; then # -lt → less than
-  date=$(date --date="yesterday" +%Y/%m/%d)
-else
-  date=$(date +%Y/%m/%d)
-fi
+[[ $(date +%-H) -lt 3 ]] && date="yesterday" || date="today"
+date=$(date --date=$date +%Y/%m/%d)
 
 mkdir -p "$HOME/saveuriendir/$date"
 pushd "$HOME/saveuriendir/$date" > /dev/null
@@ -27,8 +24,8 @@ fi
 
 journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-[[ -O "$journal" ]] && chmod u+w "$journal" # -O → Own
+[[ -O "$journal" ]] && chmod u+w "$journal"
 vim "$journal"
-[[ -w "$journal" ]] && chmod u-w "$journal" # -W → Write
+[[ -w "$journal" ]] && chmod u-w "$journal"
 
-[[ -s "$journal" ]] || rm -f "$journal" # -s → size ≠ 0
+[[ -s "$journal" ]] || rm -f "$journal"
