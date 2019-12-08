@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ $(pgrep -f -o .config/journal) -ne $$ ]]; then # -ne → not equal
+  echo Error script already running.
+  exit 1
+fi
+
 if [[ $(date +%-H) -lt 3 ]]; then # -lt → less than
   date=$(date --date="yesterday" +%Y/%m/%d)
 else
