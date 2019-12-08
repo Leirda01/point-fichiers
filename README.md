@@ -8,8 +8,8 @@
   ```
 
 * L’installation génère des liens symboliques pour chacun des fichiers du dépôts
-  (sauf README.md, .git, et lui-même). Si un fichier est déjà présent, un backup
-  est créé avec le suffixe `~` (ATTENTION : écrase toute précédente backup).
+  (sauf `README.md`, `.git`, et `setup.sh`) Si un fichier est déjà présent, un
+  backup est créé avec le suffixe `~`
 
 * Pour les fichiers cachés, le lien symbolique est créé dans `$HOME`, tous les
   autres dans `$HOME/.config`. Ça devrait faire le taff.
@@ -17,8 +17,6 @@
 ## À faire…
 
 * `journal`
-
-  - [x] Réécrire complètement le script, en `TDD`, pour l’entraînement.
 
   - [x] Enregistrer le journal du jour dans un dossier plutôt qu’un seul
     fichier.
@@ -29,11 +27,13 @@
   - [x] Des phrases plus concises dans le script (pour le vrai journal
     faut que je sois plus `--verbose` au contraire!)
 
-  - [ ] Une instance du journal « lock » son utilisation ailleurs. Dans le meilleur
+  - [x] Une instance du journal « lock » son utilisation ailleurs. Dans le meilleur
     des cas, appeler le `journal` quelque part alors qu’il est déjà ouvert
     l’ouvre dans l’instance courante de bash.
 
-  - _finalement il n’y aura pas eu de `TDD`…_
+  - [ ] Une meilleure gestion de l’erreur lors de l’existence d’un processus
+    aileurs. Peut-être réussir à fermer l’autre instance (en sauvegardant? Ou
+    pas?) avant de l’ouvrir dans le `bash` courant.
 
 * `i3`
 
