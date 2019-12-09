@@ -1,6 +1,5 @@
 ## Installation
 
-* Exécuter les commandes suivantes dans le shell :
   ```bash
   git clone git@github.com/Leirda01/point-fichiers.git &&
   cd point-fichiers;
@@ -27,12 +26,12 @@
   - [x] Des phrases plus concises dans le script (pour le vrai journal
     faut que je sois plus `--verbose` au contraire!)
 
-  - [x] Une instance du journal « lock » son utilisation ailleurs. Dans le meilleur
-    des cas, appeler le `journal` quelque part alors qu’il est déjà ouvert
-    l’ouvre dans l’instance courante de bash.
+  - [x] Une instance du journal « lock » son utilisation ailleurs. Dans le
+    meilleur des cas, appeler le `journal` quelque part alors qu’il est déjà
+    ouvert l’ouvre dans l’instance courante de bash.
 
   - [ ] Une meilleure gestion de l’erreur lors de l’existence d’un processus
-    aileurs. Peut-être réussir à fermer l’autre instance (en sauvegardant? Ou
+    existant. Peut-être réussir à fermer l’autre instance (en sauvegardant? Ou
     pas?) avant de l’ouvrir dans le `bash` courant.
 
 * `i3`
@@ -45,7 +44,7 @@
   - [ ] Profiter de la gestion modale des raccourcis de i3.
     - [ ] Naviguer plus facilement parmi (beaucoup) de fenêtres.
     - [ ] Utiliser les workspaces d’une manière plus dynamiques.
-    - [ ] Déplacer plus aisément un workspace d’un écran à l’autre.
+    - [ ] Déplacer plus aisément un workspace d’un moniteur à l’autre.
     - [ ] Réorganiser rapidement les containers selon différents critères.
 
   - [ ] Utiliser des `marks` pour naviguer facilement entre les workspaces /
