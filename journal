@@ -11,16 +11,7 @@ date=$(date --date=$date +%Y/%m/%d)
 mkdir -p "$HOME/saveuriendir/$date"
 pushd "$HOME/saveuriendir/$date" > /dev/null
 
-if [[ $@ ]]; then
-  journal=$@
-else
-  if [[ $(ls) ]]; then
-    select journal in *; do
-      break;
-    done
-  fi
-fi
-[[ $journal ]] || journal="main"
+[[ $@ ]] && journal=$@ || journal="main"
 
 journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
