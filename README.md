@@ -30,7 +30,7 @@
     meilleur des cas, appeler le `journal` quelque part alors qu’il est déjà
     ouvert l’ouvre dans l’instance courante de bash.
 
-  - [ ] Une meilleure gestion de l’erreur lors de l’existence d’un processus
+  - [x] Une meilleure gestion de l’erreur lors de l’existence d’un processus
     existant. Peut-être réussir à fermer l’autre instance (en sauvegardant? Ou
     pas?) avant de l’ouvrir dans le `bash` courant.
 
