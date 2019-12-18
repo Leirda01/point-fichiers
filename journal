@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ $(pgrep -f -o .config/journal) -ne $$ ]]; then
-  echo Error script already running.
-  exit 1
+  vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
 fi
 
 [[ $(date +%-H) -lt 3 ]] && date="yesterday" || date="today"
@@ -15,12 +14,10 @@ pushd "$HOME/saveuriendir/$date" > /dev/null
 
 journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-[[ -O "$journal" ]] && chmod u+w "$journal"
 if [[ $(vim --version | grep +clientserver) ]]; then
   vim --servername JOURNAL "$journal"
 else
   echo Please compile vim with +clientserver option.
 fi
-[[ -w "$journal" ]] && chmod u-w "$journal"
 
 [[ -s "$journal" ]] || rm -f "$journal"
