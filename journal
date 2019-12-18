@@ -16,7 +16,11 @@ pushd "$HOME/saveuriendir/$date" > /dev/null
 journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
 [[ -O "$journal" ]] && chmod u+w "$journal"
-vim "$journal"
+if [[ $(vim --version | grep +clientserver) ]]; then
+  vim --servername JOURNAL "$journal"
+else
+  echo Please compile vim with +clientserver option.
+fi
 [[ -w "$journal" ]] && chmod u-w "$journal"
 
 [[ -s "$journal" ]] || rm -f "$journal"
