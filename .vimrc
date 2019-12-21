@@ -6,13 +6,10 @@ set showcmd
 set linebreak
 set showbreak=→\ 
 
-filetype plugin indent on
-syntax on
-
 set textwidth=80
+
 set autoindent
 set smartindent
-
 set expandtab
 
 set tabstop=2
@@ -20,6 +17,11 @@ set shiftwidth=2
 
 set hlsearch
 set incsearch
+
+set formatprg=par\ 80j\ p2
+
+filetype plugin indent on
+syntax on
 
 " Colore les espaces insécables
 highlight NbSp ctermbg=darkgray guibg=lightred
@@ -29,5 +31,3 @@ set list
 
 cnoremap q  cq
 cnoremap q! cq
-
-set formatprg=par\ 80j\ p2
