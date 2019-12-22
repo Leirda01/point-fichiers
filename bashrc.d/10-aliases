@@ -1,7 +1,6 @@
 alias ls='ls --color=auto --group-directories-first'
-alias sl='sl -a'
 alias tree='tree -C --dirsfirst'
+alias sl='sl -a'
 alias journal='$HOME/.config/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/dotfiles'
-alias vutest='$HOME/.vim/bundle/vim-unit/vutest.sh'

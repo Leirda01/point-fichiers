@@ -29,5 +29,6 @@ match NbSp /\%xa0/
 set listchars=nbsp:░
 set list
 
-cnoremap q  cq
-cnoremap q! cq
+nnoremap ZQ :cq
+nnoremap :q :cq
+nnoremap :q! :cq
