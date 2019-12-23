@@ -5,3 +5,5 @@ else
   PS1='\[$reset\]\[$yellow\]$ \[$reset\]'
 fi
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s\007" "${PWD/#$HOME/\~}"'
+
+# vim: syntax=bash

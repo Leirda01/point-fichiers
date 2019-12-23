@@ -4,3 +4,5 @@ alias sl='sl -a'
 alias journal='$HOME/.config/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/dotfiles'
+
+# vim: syntax=bash
