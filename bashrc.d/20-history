@@ -3,4 +3,4 @@ export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'history -n; history -w; history -c; history -r'
 
-# vim: syntax=bash
+# vim: filetype=bash

@@ -1,8 +1,9 @@
 alias ls='ls --color=auto --group-directories-first'
 alias tree='tree -C --dirsfirst'
 alias sl='sl -a'
+alias mutt='neomutt'
 alias journal='$HOME/.config/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/dotfiles'
 
-# vim: syntax=bash
+# vim: filetype=bash

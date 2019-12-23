@@ -9,4 +9,4 @@ white=$(   tput setaf 7)
 bold=$(    tput bold)
 reset=$(   tput sgr0)
 
-# vim: syntax=bash
+# vim: filetype=bash
