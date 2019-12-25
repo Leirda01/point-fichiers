@@ -26,7 +26,7 @@ syntax on
 " Colore les espaces insécables
 highlight NbSp ctermbg=darkgray guibg=lightred
 match NbSp /\%xa0/
-set listchars=nbsp:░
+set listchars=nbsp:░,tab:\ \ 
 set list
 
 nnoremap ZQ :cq
