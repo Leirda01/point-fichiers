@@ -3,7 +3,7 @@ function prompt {
     if [[ $UID -gt 0 ]]; then
       PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
     else
-      PS1='\[$reset\][\[$red\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
+      PS1='\[$reset\][\[$red\]\u@\h \[$cyan\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
     fi
   else
     PS1='\[$reset\]\[$yellow\]$ \[$reset\]'
