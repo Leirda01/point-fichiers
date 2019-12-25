@@ -1,10 +1,15 @@
 function prompt {
   if [[ $COLUMNS -ge 90 ]]; then
-    PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
+    if [[ $UID -gt 0 ]]; then
+      PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
+    else
+      PS1='\[$reset\][\[$red\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
+    fi
   else
     PS1='\[$reset\]\[$yellow\]$ \[$reset\]'
   fi
 }
+
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s\007" "${PWD}"; prompt'
 
 # vim: filetype=bash
