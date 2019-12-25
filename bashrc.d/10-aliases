@@ -5,5 +5,6 @@ alias mutt='neomutt'
 alias journal='$HOME/.config/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/dotfiles'
+alias batt='cat /sys/class/power_supply/BAT0/capacity'
 
 # vim: filetype=bash
