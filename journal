@@ -4,7 +4,7 @@ if [[ $(pgrep -f -o .config/journal) -ne $$ ]]; then
   vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
 fi
 
-[[ $(date +%-H) -lt 3 ]] && date="yesterday" || date="today"
+[[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
 
 mkdir -p "$HOME/saveuriendir/$date"
