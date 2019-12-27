@@ -1,0 +1,4 @@
+#!/bin/sh
+program=$(dmenu_path | dmenu "$@")
+i3-msg workspace $program
+${SHELL:-"/bin/sh -c "} $program &

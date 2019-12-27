@@ -32,7 +32,7 @@ bindsym $mod+Shift+B kill
 
 # start dmenu (a program launcher)
 # Please use colors from Xresources another day.
-bindsym $mod+i workspace "dmenu"; exec dmenu_run -fn 'DejaVu Sans Mono 9.5' -nb '#000000' -sb '#000000' -nf '#444444' -sf '#ffffff' -l 25
+bindsym $mod+i exec dmenu_run -nb '#000000' -sb '#000000' -nf '#444444' -sf '#ffffff'
 
 # change focus
 bindsym $mod+c focus left
