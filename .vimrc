@@ -18,8 +18,6 @@ set shiftwidth=2
 set hlsearch
 set incsearch
 
-set formatprg=par\ 80j\ p2
-
 filetype plugin indent on
 syntax on
 
