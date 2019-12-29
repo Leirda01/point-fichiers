@@ -1,5 +1,5 @@
 alias ls='ls --color=auto --group-directories-first'
-alias tree='tree -C --dirsfirst'
+alias tree='tree --dirsfirst'
 alias sl='sl -a'
 alias mutt='neomutt'
 alias journal='$HOME/.config/journal'
