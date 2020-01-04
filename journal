@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ $(vim --version | grep +clientserver) = '' ]]; then
+  echo Please compile vim with +clientserver option.
+  exit 1
+fi
+
 if [[ $(vim --serverlist | grep JOURNAL) ]]; then
   vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
 fi
@@ -14,10 +19,6 @@ pushd "$HOME/saveuriendir/$date" > /dev/null
 
 journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-if [[ $(vim --version | grep +clientserver) ]]; then
-  vim --servername JOURNAL "$journal"
-else
-  echo Please compile vim with +clientserver option.
-fi
+vim --servername JOURNAL "$journal"
 
 [[ -s "$journal" ]] || rm -f "$journal"
