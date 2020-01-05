@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $(vim --version | grep +clientserver) = '' ]]; then
+if [[ -z $(vim --version | grep +clientserver) ]]; then
   echo Error: Missing \`+clientserver\' option with vim.
   exit 1
 fi
