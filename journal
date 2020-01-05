@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ $(vim --version | grep +clientserver) = '' ]]; then
-  echo Please compile vim with +clientserver option.
+  echo Error: Missing \`+clientserver\' option with vim.
   exit 1
 fi
 
@@ -15,8 +15,7 @@ date=$(date --date=$date +%Y/%m/%d)
 mkdir -p "$HOME/saveuriendir/$date"
 pushd "$HOME/saveuriendir/$date" > /dev/null
 
-[[ $@ ]] && journal=$@ || journal="main"
-
+journal=${@:-main}
 journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
 vim --servername JOURNAL "$journal"
