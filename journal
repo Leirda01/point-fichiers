@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# echo Usage: $0 [COMMAND] [OPTION]... [FILE]
+
+# journal FILE → open file for writing today
+
+# journal write FILE → same as `journal FILE'
+
+# journal grep PATTERN → search pattern in journal
+
+# journal grep -d DATE... PATTERN → search pattern in specific date
+
+# journal cp JOURNAL... → `cp' to xclipboard some § in journal
+
 if [[ -z $(vim --version | grep +clientserver) ]]; then
   echo Error: Missing \`+clientserver\' option with vim.
   exit 1
@@ -13,11 +25,10 @@ fi
 date=$(date --date=$date +%Y/%m/%d)
 
 mkdir -p "$HOME/saveuriendir/$date"
-pushd "$HOME/saveuriendir/$date" > /dev/null
 
 journal=${@:-main}
-journal="$HOME/saveuriendir/$date/${journal%%.md}.md"
+path="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-vim --servername JOURNAL "$journal"
+vim --servername JOURNAL "$path"
 
-[[ -s "$journal" ]] || rm -f "$journal"
+[[ -s "$path" ]] || rm -f "$path"
