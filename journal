@@ -1,24 +1,10 @@
 #!/usr/bin/env bash
 
-# echo Usage: $0 [COMMAND] [OPTION]... [FILE]
-
-# journal FILE → open file for writing today
-
-# journal write FILE → same as `journal FILE'
-
-# journal grep PATTERN → search pattern in journal
-
-# journal grep -d DATE... PATTERN → search pattern in specific date
-
-# journal cp JOURNAL... → `cp' to xclipboard some § in journal
-
-if [[ -z $(vim --version | grep +clientserver) ]]; then
-  echo Error: Missing \`+clientserver\' option with vim.
-  exit 1
-fi
-
-if [[ $(vim --serverlist | grep JOURNAL) ]]; then
-  vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
+if [[ $(vim --version | grep +clientserver) ]]; then
+  vim_in_socket=1
+  if [[ $(vim --serverlist | grep JOURNAL) ]]; then
+    vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
+  fi
 fi
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
@@ -29,6 +15,6 @@ mkdir -p "$HOME/saveuriendir/$date"
 journal=${@:-main}
 path="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-vim --servername JOURNAL "$path"
+[[ $vim_in_socket ]] && vim --servername JOURNAL "$path" || vim "$path"
 
 [[ -s "$path" ]] || rm -f "$path"
