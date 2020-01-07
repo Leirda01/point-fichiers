@@ -26,7 +26,3 @@ highlight NbSp ctermbg=darkgray guibg=lightred
 match NbSp /\%xa0/
 set listchars=nbsp:░,tab:\ \ 
 set list
-
-nnoremap ZQ :cq
-nnoremap :q :cq
-nnoremap :q! :cq

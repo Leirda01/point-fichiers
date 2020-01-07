@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ $(vim --version | grep +clientserver) ]]; then
-  vim_in_socket=1
+  vim_in_socket="true"
   if [[ $(vim --serverlist | grep JOURNAL) ]]; then
     vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
   fi
