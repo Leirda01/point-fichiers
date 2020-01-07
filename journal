@@ -15,6 +15,10 @@ mkdir -p "$HOME/saveuriendir/$date"
 journal=${@:-main}
 path="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-[[ $vim_in_socket ]] && vim --servername JOURNAL "$path" || vim "$path"
+if [[ $vim_in_socket ]]; then
+  vim --servername JOURNAL "$path"
+else
+  vim "$path"
+fi
 
 [[ -s "$path" ]] || rm -f "$path"
