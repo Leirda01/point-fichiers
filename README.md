@@ -15,25 +15,6 @@
 
 ## À faire…
 
-* `journal`
-
-  - [x] Enregistrer le journal du jour dans un dossier plutôt qu’un seul
-    fichier.
-
-  - [x] La nouvelle journée devrait commencer à trois heures au lieu de minuit.
-    Ou bien je devrais me coucher plus tôt…
-
-  - [x] Des phrases plus concises dans le script (pour le vrai journal
-    faut que je sois plus `--verbose` au contraire!)
-
-  - [x] Une instance du journal « lock » son utilisation ailleurs. Dans le
-    meilleur des cas, appeler le `journal` quelque part alors qu’il est déjà
-    ouvert l’ouvre dans l’instance courante de bash.
-
-  - [x] Une meilleure gestion de l’erreur lors de l’existence d’un processus
-    existant. Peut-être réussir à fermer l’autre instance (en sauvegardant? Ou
-    pas?) avant de l’ouvrir dans le `bash` courant.
-
 * `i3`
 
   - [ ] S’occuper sérieusement des couleurs.
@@ -61,17 +42,7 @@
 
 * `bash`
 
-  - [x] S’occuper sérieusement des couleurs.
-
-  - [x] Créer un script de `setup` pour ce dépôt.
-
-  - [x] Un nouveau terminal ouvert devra suivre le même chemin qu’un éventuel terminal
-    parent.
-
   - [ ] Mu-muse avec `shopt` et autres options du terminal.
-
-  - [x] Changer la longueur du `PS1` en fonction du nombre de colonnes
-    disponible.
 
 * `urxvt`
 
@@ -85,9 +56,6 @@
     autres.
 
 * `je ne sais pas encore…`
-
-  - [ ] Signale moi quand un programme me demande des permissions `sudo`, quand
-    je n’ai pas le focus. Ça évitera de foutre en l’air mes MàJ de `aur`.
 
   - [ ] __Peut-être__ rendre tout ça `POSIX Conformant` à l’occasion. Gros
     peut-être. Quoique ça ne doit pas être si compliqué… Je ne réalise pas du
