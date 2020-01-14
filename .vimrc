@@ -18,6 +18,8 @@ set shiftwidth=2
 set hlsearch
 set incsearch
 
+set noswapfile
+
 filetype plugin indent on
 syntax on
 
