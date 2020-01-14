@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ ${0%/*} != . ]]; then
+  echo Please run from directory instead.
+  exit 1
+fi
+
 echo ========MAKE SYMLINKS========
 
 for config in $(ls -A); do
