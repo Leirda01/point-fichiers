@@ -17,38 +17,36 @@
 
 * `i3`
 
-  - [ ] S’occuper sérieusement des couleurs.
+  - [ ] Choisir le nom d’un nouveau workspace et naviguer parmis les workspaces
+    en les désignant par nom.
 
-  - [ ] Gérer les déplacements de `workspaces` différemment (plus facilement le
-    déplacer vers un moniteur ou l’autre).
+  - [ ] Donner le focus à une fenêtre en la recherchant par nom, indépendamment
+    du workspace dans lequel elle se trouve.
 
-  - [ ] Profiter de la gestion modale des raccourcis de i3.
-    - [ ] Naviguer plus facilement parmi (beaucoup) de fenêtres.
-    - [ ] Utiliser les workspaces d’une manière plus dynamiques.
-    - [ ] Déplacer plus aisément un workspace d’un moniteur à l’autre.
-    - [ ] Réorganiser rapidement les containers selon différents critères.
+  - [ ] Permet de spécifier si un workspace prend le focus sur l’écran
+    secondaire, et lequel.
 
-  - [ ] Utiliser des `marks` pour naviguer facilement entre les workspaces /
-    container. Ou bien trouver un autre moyen de le faire (modal?)
+  - [ ] Créer une sorte de « workspace HUB » qui afficherait les informations
+    systèmes et des détails à propos des autres workspaces et fenêtres.
 
   - [ ] Mieux gérer la détection des moniteurs (le faire automatiquement)
 
   - [ ] Gérer les touches spéciales (son, wifi, lecture-pause, lock, calculette,
     _etc_).
 
-  - [ ] Donner des chaînes de caractères en nom aux workspace en fonction de ce qu’ils
-    contiennent. Plus lisible, plus propres. Intéressant de savoir comment se
-    comporte i3bar quand il doit gérer des noms longs.
-
-* `bash`
-
-  - [ ] Mu-muse avec `shopt` et autres options du terminal.
-
 * `urxvt`
 
   - [ ] Mettre à jour les deux-trois couleurs incorrects
+  
+* `vim`
 
-  - [ ] Exploiter tout son potentiel
+  - [ ] Retirer les messages d’erreurs dûs à Pathogen / Ne plus utiliser
+    Pathogen.
+
+  - [ ] Utiliser `vim-plug`.
+
+  - [ ] Créer mes propres mappings bépo plutôt que d’utiliser le plugin de
+    @michamos.
 
 * `setup.sh`
 
