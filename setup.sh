@@ -7,6 +7,7 @@ fi
 
 echo ========MAKE SYMLINKS========
 
+[[ -d $HOME/.config ]] || mkdir "$HOME/.config"
 for config in $(ls -A); do
   case $config in
     ("setup.sh" | ".git" | "README.md")
