@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
+[[ $(type -p $1) ]] && call_command=true
+[[ $(vim --version | grep +clientserver) ]] && vim_in_socket=true
+
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
 
-[[ $(type -p $1) ]] && args=${@:2} || args=${@}
+[[ $call_command ]] && args="${@:2}" || args="${@}"
+
 journal="${args:-main}"
 path="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-if [[ $(type -p $1) ]]; then
+if [[ $call_command ]]; then
   $1 "$path"
 else
-  if [[ $(vim --version | grep +clientserver) ]]; then
-    vim_in_socket="true"
+  if [[ $vim_in_socket ]]; then
     if [[ $(vim --serverlist | grep JOURNAL) ]]; then
       vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
     fi
