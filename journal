@@ -1,24 +1,26 @@
 #!/usr/bin/env bash
 
-if [[ $(vim --version | grep +clientserver) ]]; then
-  vim_in_socket="true"
-  if [[ $(vim --serverlist | grep JOURNAL) ]]; then
-    vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
-  fi
-fi
-
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
 
-mkdir -p "$HOME/saveuriendir/$date"
-
-journal=${@:-main}
+[[ $(type -p $1) ]] && args=${@:2} || args=${@}
+journal="${args:-main}"
 path="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
-if [[ $vim_in_socket ]]; then
-  vim --servername JOURNAL "$path"
+if [[ $(type -p $1) ]]; then
+  $1 "$path"
 else
-  vim "$path"
-fi
+  if [[ $(vim --version | grep +clientserver) ]]; then
+    vim_in_socket="true"
+    if [[ $(vim --serverlist | grep JOURNAL) ]]; then
+      vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
+    fi
+  fi
 
-[[ -s "$path" ]] || rm -f "$path"
+  mkdir -p "$HOME/saveuriendir/$date"
+  if [[ $vim_in_socket ]]; then
+    vim --servername JOURNAL "$path"
+  else
+    vim "$path"
+  fi
+fi
