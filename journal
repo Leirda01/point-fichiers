@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 
-[[ $(type -p $1) ]] && call_command=true
+[[ $(type -t $1) ]] && call_command="$1" && shift
 [[ $(vim --version | grep +clientserver) ]] && vim_in_socket=true
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
 
-[[ $call_command ]] && args="${@:2}" || args="${@}"
-
-journal="${args:-main}"
+journal="${@:-main}"
 path="$HOME/saveuriendir/$date/${journal%%.md}.md"
 
 if [[ $call_command ]]; then
-  $1 "$path"
+  "$call_command" "$path"
 else
   if [[ $vim_in_socket ]]; then
     if [[ $(vim --serverlist | grep JOURNAL) ]]; then
