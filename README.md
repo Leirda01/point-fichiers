@@ -34,10 +34,6 @@
   - [ ] Gérer les touches spéciales (son, wifi, lecture-pause, lock, calculette,
     _etc_).
 
-* `urxvt`
-
-  - [ ] Mettre à jour les deux-trois couleurs incorrects
-  
 * `vim`
 
   - [ ] Retirer les messages d’erreurs dûs à Pathogen / Ne plus utiliser

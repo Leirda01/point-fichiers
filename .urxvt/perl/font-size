@@ -24,7 +24,7 @@ sub on_user_command {
     } else {
       return;
     }
-    if ($new_size<6) {
+    if ($new_size < 6) {
       $new_size = 6;
     }
     $font =~ s/size\=$current_size/size\=$new_size/;
