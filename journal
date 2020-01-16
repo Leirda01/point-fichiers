@@ -12,10 +12,8 @@ path="$HOME/saveuriendir/$date/${journal%%.md}.md"
 if [[ $call_command ]]; then
   $call_command "$path"
 else
-  if [[ $vim_in_socket ]]; then
-    if [[ $(vim --serverlist | grep JOURNAL) ]]; then
-      vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
-    fi
+  if [[ $($vim_in_socket && vim --serverlist | grep JOURNAL) ]]; then
+    vim --servername JOURNAL --remote-send "<C-\><C-N>:xall:qall!"
   fi
 
   mkdir -p "$HOME/saveuriendir/$date"

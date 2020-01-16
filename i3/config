@@ -71,7 +71,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # default mode for i3 is tabbed
-workspace_layout tabbed 
+workspace_layout tabbed
 
 # Don’t bother me marking windows as urgent
 focus_on_window_activation none
@@ -87,7 +87,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10:riot" 
+set $ws10 "10"
 
 bindsym $mod+quotedbl        workspace $ws1
 bindsym $mod+guillemotleft   workspace $ws2
