@@ -53,12 +53,6 @@
   - [ ] « `sed`er » tous les fichiers pour remplacer les chemins absolues et
     autres.
 
-* `je ne sais pas encore…`
-
-  - [ ] __Peut-être__ rendre tout ça `POSIX Conformant` à l’occasion. Gros
-    peut-être. Quoique ça ne doit pas être si compliqué… Je ne réalise pas du
-    tout ce que ça implique.
-
 ## Sources :
 
 * [Taille de la police dans le terminal (`.urxvt/perl`)](https://artisan.karma-lab.net/modifier-taille-polices-durxvt)
