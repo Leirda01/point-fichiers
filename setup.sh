@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ ${0%/*} != . ]]; then
-  echo Please run "${0#./}" from his directory instead.
+  echo Please run "${0#./}" from it directory instead.
   exit 1
 fi
 
