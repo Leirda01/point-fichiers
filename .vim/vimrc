@@ -33,4 +33,4 @@ Plug 'tpope/vim-repeat'
 
 call plug#end()
 
-source bépo.vim
+runtime bepo.vim

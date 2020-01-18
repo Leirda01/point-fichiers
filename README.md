@@ -36,13 +36,10 @@
 
 * `vim`
 
-  - [ ] Retirer les messages d’erreurs dûs à Pathogen / Ne plus utiliser
-    Pathogen.
-
-  - [ ] Utiliser `vim-plug`.
-
   - [ ] Créer mes propres mappings bépo plutôt que d’utiliser le plugin de
     @michamos.
+
+  - [ ] Comment intégrer correctement des plugins avec mes remappages bépo ?
 
 * `setup.sh`
 
