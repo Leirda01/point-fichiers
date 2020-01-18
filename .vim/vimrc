@@ -1,16 +1,14 @@
-
-set nocompatible
+set encoding=utf-8
 set number
 set showcmd
 set linebreak
 set showbreak=→\ 
 
-set textwidth=80
-
 set autoindent
 set smartindent
 set expandtab
 
+set textwidth=80
 set tabstop=2
 set shiftwidth=2
 
