@@ -24,3 +24,11 @@ highlight NbSp ctermbg=darkgray guibg=lightred
 match NbSp /\%xa0/
 set listchars=nbsp:░,tab:\ \ 
 set list
+
+call plug#begin('~/.config/vim-plugin')
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+call plug#end()
