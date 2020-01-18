@@ -32,3 +32,5 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
 call plug#end()
+
+source bépo.vim
