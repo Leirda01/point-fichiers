@@ -53,3 +53,5 @@
 * [Historique propre et dynamique](https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history/18443#18443)
 
 * [Tout mettre dans un `bashrc.d/`](https://github.com/yaf/dotfiles)
+
+* [config pour le lecteur `mpv`](http://bepo.fr/wiki/Mpv)
