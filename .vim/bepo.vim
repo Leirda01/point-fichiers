@@ -9,9 +9,9 @@ endif
 
 "s:tomap is for text-objects
 function! s:tomap(key, target) abort
-  if maparg(a:key, 'o') ==# ''
-    execute "onoremap" a:key a:target
-  endif
+  "if maparg(a:key, 'o') ==# ''
+  execute "onoremap" a:key a:target
+  "endif
   if maparg(a:key, 'x') ==# ''
     execute "xnoremap" a:key a:target
   endif
@@ -19,9 +19,9 @@ endfunction
 
 "s:amap is for the rest
 function! s:amap(key, target) abort
-  if maparg(a:key, 'n') ==# ''
-    execute "nnoremap" a:key a:target
-  endif
+  "if maparg(a:key, 'n') ==# ''
+  execute "nnoremap" a:key a:target
+  "endif
   call s:tomap(a:key, a:target)
 endfunction
 

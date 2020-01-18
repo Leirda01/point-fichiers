@@ -28,7 +28,7 @@ set list
 call plug#begin('~/.config/vim-plugin')
 
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround', { 'do': 'let g:surround_no_mappings' }
 Plug 'tpope/vim-repeat'
 
 call plug#end()
