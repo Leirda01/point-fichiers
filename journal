@@ -10,7 +10,7 @@ date=$(date --date=$date +%Y/%m/%d)
 path="$HOME/saveuriendir/$date/"
 
 if [[ $call_command ]]; then
-  $call_command "$path"
+  ${call_command} ${@/PATH/$path}
 else
   if [[ $($socket && vim --serverlist | grep JOURNAL) ]]; then
     vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
