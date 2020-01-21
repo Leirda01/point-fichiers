@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-[[ $(type -t $1) ]] && call_command="$1" && shift
+[[ $(type -t $1) ]] && call_command=$1 && shift
 [[ $(vim --version | grep +clientserver) ]] && socket=true
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
 
-journal="${@:-main}"
-path="$HOME/saveuriendir/$date/${journal%%.adoc}.adoc"
+[[ $@ ]] && journal="${@%%.md}.md" || journal="main.md"
+path="$HOME/saveuriendir/$date/"
 
 if [[ $call_command ]]; then
   $call_command "$path"
@@ -18,8 +18,8 @@ else
 
   mkdir -p "$HOME/saveuriendir/$date"
   if [[ $socket ]]; then
-    vim --servername JOURNAL "$path"
+    (cd "$path"; vim --servername JOURNAL "$journal")
   else
-    vim "$path"
+    (cd "$path"; vim "$journal")
   fi
 fi
