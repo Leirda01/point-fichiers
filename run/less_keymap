@@ -1,0 +1,5 @@
+t forw-line
+k next-tag
+
+s back-line
+j toggle-option o
