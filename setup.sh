@@ -10,7 +10,7 @@ echo ========MAKE SYMLINKS========
 [[ -d $HOME/.config ]] || mkdir "$HOME/.config"
 for config in $(ls -A); do
   case $config in
-    ("setup.sh" | ".git" | "README.md")
+    ("setup.sh" | ".git" | "README.md" | "run" )
       echo JUNK → $config ignored.
       ;;
     (.*)
@@ -31,3 +31,9 @@ for config in $(ls -A); do
       ;;
   esac
 done
+
+echo =====MAKE COMMANDS IN RUN=====
+(
+cd run
+echo generate man keymap && lesskey less_keymap
+)
