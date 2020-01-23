@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 
-[[ $(type -t $1) ]] && call_command=$1 && shift
+[[ $(type -t $1) ]] && call_command=$@ && shift
 [[ $(vim --version | grep +clientserver) ]] && socket=true
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
 
-[[ $@ ]] && journal="${@%%.md}.md" || journal="main.md"
+[[ $@ ]] && journal="${@%%.adoc}.adoc" || journal="main.adoc"
 path="$HOME/saveuriendir/$date/"
 
+mkdir -p "$path"; cd "$path"
 if [[ $call_command ]]; then
-  ${call_command} ${@/PATH/$path}
+  ${call_command}
 else
   if [[ $($socket && vim --serverlist | grep JOURNAL) ]]; then
     vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
   fi
 
-  mkdir -p "$HOME/saveuriendir/$date"
   if [[ $socket ]]; then
-    (cd "$path"; vim --servername JOURNAL "$journal")
+    vim --servername JOURNAL "$journal"
   else
-    (cd "$path"; vim "$journal")
+    vim "$journal"
   fi
 fi
