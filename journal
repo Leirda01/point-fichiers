@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ $(type -t $1) ]] && call_command=$@ && shift
+[[ $(type -t $1) ]] && call_command="$1" && shift
 [[ $(vim --version | grep +clientserver) ]] && socket=true
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
@@ -11,15 +11,11 @@ path="$HOME/saveuriendir/$date/"
 
 mkdir -p "$path"; cd "$path"
 if [[ $call_command ]]; then
-  ${call_command}
+  $call_command "$@"
 else
   if [[ $($socket && vim --serverlist | grep JOURNAL) ]]; then
     vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
   fi
 
-  if [[ $socket ]]; then
-    vim --servername JOURNAL "$journal"
-  else
-    vim "$journal"
-  fi
+  vim $([[ $socket ]] && echo --servername JOURNAL) "$journal"
 fi
