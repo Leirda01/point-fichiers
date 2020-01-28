@@ -11,7 +11,7 @@ path="$HOME/saveuriendir/$date/"
 
 mkdir -p "$path"; cd "$path"
 if [[ $call_command ]]; then
-  $call_command "$@"
+  $call_command "${@%%.adoc}.adoc"
 else
   if [[ $($socket && vim --serverlist | grep JOURNAL) ]]; then
     vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
