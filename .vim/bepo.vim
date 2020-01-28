@@ -1,6 +1,12 @@
 " vim-bepo - Plugin vim pour disposition de clavier bépo
 " Maintainer:   Micha Moskovic
 
+" Colore les espaces insécables
+highlight NbSp ctermbg=darkgray guibg=lightred
+match NbSp /\%xa0/
+set listchars=nbsp:░,tab:\ \ 
+set list
+
 if exists('g:loaded_bepo') || &compatible
   finish
 else
