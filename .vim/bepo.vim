@@ -60,6 +60,8 @@ call s:amap(   '«',  '<'     )    "[<] est moins accessible que [«]
 call s:amap(   '»',  '>'     )    "idem pour [»] et [>]
 call s:amap(   ';',  ','     )    "idem pour [,] et [;]
 call s:amap(   ',',  ';'     )    "qui sont permutés
+call s:amap(   '.',  ':'     )    "les commandes . et :
+call s:amap(   ':',  '.'     )    "sont permutés
 call s:amap(  'g,',  'g;'    )    "idem pour [g,] et [g;]
 call s:amap(  'g;',  'g,'    )    "qui sont permutés
 call s:amap(   'é',  'w'     )    "[w] est peu accessible, on utilise [é]
