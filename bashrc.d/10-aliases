@@ -6,5 +6,6 @@ alias journal='$HOME/.config/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/point-fichiers'
 alias batt='cat /sys/class/power_supply/BAT0/capacity'
+alias please='sudo'
 
 # vim: filetype=bash
