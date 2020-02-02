@@ -20,13 +20,10 @@ manière.
 == À faire
 
 * `i3`
-** [ ] Choisir le nom d’un nouveau workspace et naviguer parmi eux en les
-désignant par nom.
-** [ ] Naviguer parmi les fenêtre en les désignant par nom, indépendamment du
-workspace dans lequel elle se trouve.
+** [ ] Choisir le nom d’un nouveau workspace et naviguer parmi eux en les désignant par nom.
+** [ ] Naviguer parmi les fenêtre en les désignant par nom, indépendamment du workspace dans lequel elle se trouve.
 ** [ ] Permettre de désigner un workspace sur l’écran secondaire.
-** [ ] Créer un workspace par défaut « HUB » pour afficher des infos et des
-détails à propos de X.
+** [ ] Créer un workspace par défaut « HUB » pour afficher des infos et des détails à propos de X.
 ** [ ] Mieux gérér la détection des moniteurs (le faire automatiquement).
 ** [ ] Gérer les touches spéciales :
 *** `wifi`
@@ -35,11 +32,9 @@ détails à propos de X.
 *** calculette
 * `vim`
 ** [ ] Créer mes propres mappings pour le bépo, au lieu de ceux d’un autre.
-** [ ] Corriger les mappings conflictuels entre les plugins et la
-configuration bépo.
+** [ ] Corriger les mappings conflictuels entre les plugins et la configuration bépo.
 * `setup.sh`
-** [ ] « ```sed```er » les fichiers qui contiennent des chemins absolus et autres
-aberrations.
+** [ ] « ```sed```er » les fichiers qui contiennent des chemins absolus et autres aberrations.
 
 == Sources :
 
