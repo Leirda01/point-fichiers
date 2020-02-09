@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 [[ $(type -t $1) ]] && call_command="$1" && shift
-[[ $HOME/.config/journal/"$1" ]] && call_command=$HOME/.config/journal/"$1" && shift
-[[ $(vim --version | grep +clientserver) ]] && socket=true
+[[ $(vim --version | grep +clientserver) ]] && socket=false
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
