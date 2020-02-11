@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ $($($socket) && vim --serverlist | grep JOURNAL) ]]; then
+  vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
+fi
+
+vim $([[ $socket ]] && echo --servername JOURNAL) "$journal"

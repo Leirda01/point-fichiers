@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-[[ $(type -t $1) ]] && call_command="$1" && shift
-[[ ( -f $HOME/.config/journal/$1 ) && ( -x $HOME/.config/journal/$1 ) ]] && call_command=$HOME/.config/journal/$1 && shift
-[[ $(vim --version | grep +clientserver) ]] && socket=false
+modes="$HOME/.config/journal/"
+
+if [[ ( -f $modes/$1 ) && ( -x $modes/$1 ) ]]; then
+  call_mode="$modes/$1" && shift
+elif [[ $(type -t $1) ]]; then
+  call_command="$1" && shift
+fi
+
+[[ $(vim --version | grep +clientserver) ]] && socket="true"
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
@@ -11,12 +17,10 @@ date=$(date --date=$date +%Y/%m/%d)
 path="$HOME/saveuriendir/$date/"
 
 mkdir -p "$path"; cd "$path"
-if [[ $call_command ]]; then
+if [[ $call_mode ]]; then
+  . $call_mode 
+elif [[ $call_command ]]; then
   $call_command "$@"
 else
-  if [[ $($socket && vim --serverlist | grep JOURNAL) ]]; then
-    vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
-  fi
-
-  vim $([[ $socket ]] && echo --servername JOURNAL) "$journal"
+  . $HOME/.config/journal/write
 fi
