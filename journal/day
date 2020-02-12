@@ -5,9 +5,9 @@ journal=$(mktemp)
 
 trap "rm -r $journal" EXIT 
 
-for _file in $HOME/saveuriendir/$date/*; do
+for _file in $HOME/$journal_name/$date/*; do
   echo -e "\n== $_file\n" >> $journal
-  cat $_file >> $journal
+  cat "$_file" >> $journal
 done
 unset _file
 

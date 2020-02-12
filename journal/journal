@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 options="$HOME/.config/journal"
+journal_name=${JOURNAL_NAME:=saveuriendir}
 
 if [[ ( -f $options/$1 ) && ( -x $options/$1 ) ]]; then
   call_mode="$options/$1" && shift
@@ -14,7 +15,7 @@ fi
 date=$(date --date=$date +%Y/%m/%d)
 
 [[ $@ ]] && journal="${@%%.adoc}.adoc" || journal="main.adoc"
-path="$HOME/saveuriendir/$date/"
+path="$HOME/$journal_name/$date/"
 
 mkdir -p "$path"; cd "$path"
 if [[ $call_mode ]]; then
@@ -22,5 +23,5 @@ if [[ $call_mode ]]; then
 elif [[ $call_command ]]; then
   $call_command "$@"
 else
-  . options/write
+  . $options/write
 fi

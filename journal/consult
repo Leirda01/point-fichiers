@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$HOME/saveuriendir"
+cd "$HOME/$journal_name"
 for i in $(find -name "$@"); do
   echo -e "\n== $i\n" >> $HOME/"$@".adoc;
   cat $i >> $HOME/"$@".adoc;
