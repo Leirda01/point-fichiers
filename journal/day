@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+date=$(date --date="$@" +%Y/%m/%d)
+journal=$(mktemp)
+
+trap "rm -r $journal" EXIT 
+
+for _file in $HOME/saveuriendir/$date/*; do
+  echo -e "\n== $_file\n" >> $journal
+  cat $_file >> $journal
+done
+unset _file
+
+. "$HOME/.config/journal/write"

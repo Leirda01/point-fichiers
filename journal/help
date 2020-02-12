@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-printf "Usage: journal [OPTIONS] OBJECT { COMMAND | help }\n\n"
+printf "Usage: journal OBJECT { COMMAND | help }\n\n"
 
 printf "OBJECT\n"
 printf "  write\t\tUse ${EDITOR:=vim} to open a journal page for the current day.\n"
