@@ -3,8 +3,9 @@
 printf "Usage: journal [OPTIONS] OBJECT { COMMAND | help }\n\n"
 
 printf "OBJECT\n"
-printf "  w[rite]\tUse ${EDITOR:=vim} to open a journal page for the current day.\n"
-printf "  c[onsult]\tRead journal pages by name in history.\n"
-printf "  ls\t\tList all pages for the current day.\n"
+printf "  write\t\tUse ${EDITOR:=vim} to open a journal page for the current day.\n"
+printf "  day\t\tUse ${EDITOR:=vim} to read pages of the specified date.\n"
+printf "  consult \tRead journal pages by name in history.\n"
+printf "  ls\t\tList all pages in the current day.\n"
 printf "  rm\t\tRemove page(s) from the current day.\n"
 printf "  any command\tExecute any command for the current day.\n"

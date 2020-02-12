@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-modes="$HOME/.config/journal/"
+options="$HOME/.config/journal"
 
-if [[ ( -f $modes/$1 ) && ( -x $modes/$1 ) ]]; then
-  call_mode="$modes/$1" && shift
+if [[ ( -f $options/$1 ) && ( -x $options/$1 ) ]]; then
+  call_mode="$options/$1" && shift
 elif [[ $(type -t $1) ]]; then
   call_command="$1" && shift
 fi
@@ -22,5 +22,5 @@ if [[ $call_mode ]]; then
 elif [[ $call_command ]]; then
   $call_command "$@"
 else
-  . $HOME/.config/journal/write
+  . options/write
 fi
