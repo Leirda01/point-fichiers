@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-printf "Usage: journal OBJECT { COMMAND | help }\n\n"
+printf """\
+Usage: journal OBJECT { COMMAND | help }
 
-printf "OBJECT\n"
-printf "  write\t\tUse ${EDITOR:=vim} to open a journal page for the current day.\n"
-printf "  day\t\tUse ${EDITOR:=vim} to read pages of the specified date.\n"
-printf "  consult \tRead journal pages by name in history.\n"
-printf "  ls\t\tList all pages in the current day.\n"
-printf "  rm\t\tRemove page(s) from the current day.\n"
-printf "  any command\tExecute any command for the current day.\n"
+OBJECT
+write\t\tUse ${EDITOR:=vim} to open a journal page for the current day.
+day\t\tUse ${EDITOR:=vim} to read pages of the specified date.
+consult \tRead journal pages by name in history.
+ls\t\tList all pages in the current day.
+rm\t\tRemove page(s) from the current day.
+any command\tExecute any command for the current day.
+"""
