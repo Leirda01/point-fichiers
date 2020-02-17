@@ -34,7 +34,7 @@ manière.
 ** [ ] Créer mes propres mappings pour le bépo, au lieu de ceux d’un autre.
 ** [ ] Corriger les mappings conflictuels entre les plugins et la configuration bépo.
 * `setup.sh`
-** [ ] « ```sed```er » les fichiers qui contiennent des chemins absolus et autres aberrations.
+** [ ] « ``sed``er » les fichiers qui contiennent des chemins absolus et autres aberrations.
 
 == Sources :
 
