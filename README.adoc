@@ -8,7 +8,7 @@ cd point-fichiers;
 ----
 
 On génère des liens symboliques pour chacun des fichiers présents dans le
-dépôt, sauf `README.md`, `.git`, `setup.sh` et `run`. Si un fichier est déjà
+dépôt, sauf `README.adoc`, `.git`, `setup.sh` et `run`. Si un fichier est déjà
 présent, on en fait une sauvegarde avec le suffixe `~`.
 
 Les liens sont vers `$HOME` pour les fichiers cachés, `$HOME/.config` pour les
