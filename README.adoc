@@ -41,3 +41,4 @@ manière.
 * https://artisan.karma-lab.net/modifier-taille-polices-durxvt[Taille de la police du terminal]
 * https://github.com/yaf/dotfiles[Tout dans un « bashrc.d/ »]
 * http://bepo.fr/wiki/Mpv[config pour mpv]
+* https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation[vim-plug automatique]
