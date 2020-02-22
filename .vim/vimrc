@@ -27,6 +27,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.config/vim-plugin')
 
+Plug 'sheoak/vim-bepoptimist'
 Plug 'tpope/vim-sensible'
 " Plug 'tpope/vim-surround', { 'do': 'let g:surround_no_mappings' }
 Plug 'tpope/vim-repeat'
@@ -34,5 +35,3 @@ Plug 'vim/killersheep'
 Plug 'greyblake/vim-preview'
 
 call plug#end()
-
-runtime bepo.vim
