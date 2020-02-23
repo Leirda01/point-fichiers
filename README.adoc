@@ -7,34 +7,20 @@ cd point-fichiers;
 ./setup.sh
 ----
 
-On génère des liens symboliques pour chacun des fichiers présents dans le
-dépôt, sauf `README.adoc`, `.git`, `setup.sh` et `run`. Si un fichier est déjà
-présent, on en fait une sauvegarde avec le suffixe `~`.
-
-Les liens sont vers `$HOME` pour les fichiers cachés, `$HOME/.config` pour les
-autres.
-
-Le dossier `run/` contient tout ce qui sera installé ou généré d’une autre
-manière.
+Créé un lien symbolique pour les fichiers cachés dans $HOME
+Créé un lien symbolique pour tous les autres dans $HOME/.config
+On backup tous les fichiers portant le même nom avec `~` comme suffixe.
 
 == À faire
 
 * `i3`
-** [ ] Choisir le nom d’un nouveau workspace et naviguer parmi eux en les désignant par nom.
-** [ ] Naviguer parmi les fenêtre en les désignant par nom, indépendamment du workspace dans lequel elle se trouve.
+** [ ] Choisir le nom d’un nouveau workspace, le modifier dynamiquement.
+** [ ] Naviguer parmis les fenêtre en les désignant par nom.
 ** [ ] Permettre de désigner un workspace sur l’écran secondaire.
 ** [ ] Créer un workspace par défaut « HUB » pour afficher des infos et des détails à propos de X.
-** [ ] Mieux gérér la détection des moniteurs (le faire automatiquement).
-** [ ] Gérer les touches spéciales :
-*** `wifi`
-*** lecture - pause
-*** verrouillage
-*** calculette
-* `vim`
-** [ ] Créer mes propres mappings pour le bépo, au lieu de ceux d’un autre.
-** [ ] Corriger les mappings conflictuels entre les plugins et la configuration bépo.
 * `setup.sh`
 ** [ ] « ``sed``er » les fichiers qui contiennent des chemins absolus et autres aberrations.
+** [ ] Se débarrasser du dossier `run/` qui ne sert pas à grand chose…
 
 == Sources :
 
