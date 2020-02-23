@@ -1,5 +1,4 @@
-t forw-line
-k next-tag
+s forw-line
+r back-line
 
-s back-line
 j toggle-option o

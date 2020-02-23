@@ -35,10 +35,10 @@ bindsym $mod+Shift+B kill
 bindsym $mod+i exec dmenu_run -nb '#000000' -sb '#000000' -nf '#444444' -sf '#ffffff'
 
 # change focus
-bindsym $mod+c focus left
-bindsym $mod+t focus down
-bindsym $mod+s focus up
-bindsym $mod+r focus right
+bindsym $mod+t focus left
+bindsym $mod+s focus down
+bindsym $mod+r focus up
+bindsym $mod+n focus right
 
 # move focused window
 bindsym $mod+Shift+C move left
@@ -122,15 +122,15 @@ bindsym $mod+Shift+BackSpace exec ([[ $(echo -e "yes\nno" | dmenu -p "shutdown?"
 bindsym $mod+mod1+BackSpace  exec ([[ $(echo -e "yes\nno" | dmenu -p "reboot?") == yes ]] && reboot)
 
 mode "resize" {
-        bindsym c resize shrink width 10 px or 10 ppt
-        bindsym t resize grow   height 10 px or 10 ppt
-        bindsym s resize shrink height 10 px or 10 ppt
-        bindsym r resize grow   width 10 px or 10 ppt
+        bindsym t resize shrink width 10 px or 10 ppt
+        bindsym s resize grow   height 10 px or 10 ppt
+        bindsym r resize shrink height 10 px or 10 ppt
+        bindsym n resize grow   width 10 px or 10 ppt
 
-        bindsym Shift+C move left
-        bindsym Shift+T move down
-        bindsym Shift+S move up
-        bindsym Shift+R move right
+        bindsym Shift+T move left
+        bindsym Shift+S move down
+        bindsym Shift+R move up
+        bindsym Shift+N move right
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -158,9 +158,6 @@ floating_maximum_size 0 x 0
 # set windows borderless by default
 default_border    none
 hide_edge_borders both
-
-# play around with discord
-for_window [class="discord"] floating disable
 
 bar {
     strip_workspace_numbers yes
