@@ -24,10 +24,10 @@ syntax on
 let g:bepoptimist_switch_command = 1
 
 " Colore les espaces insécables
-" highlight NbSp ctermbg=darkgray guibg=lightred
-" match NbSp /\%xa0/
-" set listchars=nbsp:░,tab:\ \ 
-" set list
+highlight NbSp ctermbg=darkgray guibg=lightred
+match NbSp /\%xa0/
+set listchars=nbsp:░,tab:\ \ 
+set list
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
