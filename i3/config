@@ -25,7 +25,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+B kill
@@ -76,7 +76,7 @@ workspace_layout tabbed
 # Don’t bother me marking windows as urgent
 focus_on_window_activation none
 
-title_align center
+#title_align center
 
 set $ws1 "1"
 set $ws2 "2"
