@@ -2,7 +2,7 @@ set nocompatible
 set number
 set showcmd
 set linebreak
-" set showbreak=→\ 
+set showbreak=→\ 
 
 set autoindent
 set smartindent

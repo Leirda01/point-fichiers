@@ -41,10 +41,10 @@ bindsym $mod+r focus up
 bindsym $mod+n focus right
 
 # move focused window
-bindsym $mod+Shift+C move left
-bindsym $mod+Shift+T move down
-bindsym $mod+Shift+S move up
-bindsym $mod+Shift+R move right
+bindsym $mod+Shift+T move left
+bindsym $mod+Shift+S move down
+bindsym $mod+Shift+R move up
+bindsym $mod+Shift+N move right
 
 # Horizontal or Vertical split
 bindsym $mod+rightsinglequotemark split h
