@@ -21,8 +21,6 @@ let g:netrw_home="$HOME/.config"
 filetype plugin indent on
 syntax on
 
-let g:bepoptimist_switch_command = 1
-
 " Colore les espaces insécables
 highlight NbSp ctermbg=darkgray guibg=lightred
 match NbSp /\%xa0/
