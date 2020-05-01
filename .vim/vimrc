@@ -1,42 +1,16 @@
-set nocompatible
-set number
-set showcmd
-set linebreak
-set showbreak=→\ 
+runtime basic.vim
 
-set autoindent
-set smartindent
-set expandtab
+runtime vim-plug.vim
+runtime color_space.vim
+runtime global_options.vim
 
-set textwidth=80
-set tabstop=2
-set shiftwidth=2
-
-set hlsearch
-set incsearch
-
-set noswapfile
-let g:netrw_home="$HOME/.config"
-
-filetype plugin indent on
-syntax on
-
-" Colore les espaces insécables
-highlight NbSp ctermbg=darkgray guibg=lightred
-match NbSp /\%xa0/
-set listchars=nbsp:░,tab:\ \ 
-set list
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 call plug#begin('~/.config/vim-plugin')
 
-Plug 'sheoak/vim-bepoptimist' 
-Plug 'tpope/vim-sensible' | Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-surround', { 'do': 'let g:surround_no_mappings' }
+Plug 'sheoak/vim-bepoptimist'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround', { 'do': 'let g:surround_no_mappings' }
+Plug 'dpelle/vim-Grammalecte'
 Plug 'vim/killersheep'
 Plug 'greyblake/vim-preview'
 
