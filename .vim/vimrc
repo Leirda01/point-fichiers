@@ -10,7 +10,6 @@ Plug 'sheoak/vim-bepoptimist'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround', { 'do': 'let g:surround_no_mappings' }
-Plug 'dpelle/vim-Grammalecte'
 Plug 'vim/killersheep'
 Plug 'greyblake/vim-preview'
 
