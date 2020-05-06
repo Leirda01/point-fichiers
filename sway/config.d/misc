@@ -13,5 +13,6 @@ hide_edge_borders both
 floating_modifier $mod normal
 
 focus_follows_mouse no
+title_align center
 workspace_layout tabbed
 focus_on_window_activation none
