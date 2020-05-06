@@ -10,7 +10,5 @@ alias batt='cat /sys/class/power_supply/BAT0/capacity #'
 alias wherami='pwd'
 
 alias please='sudo'
-alias mount='sudo mount'
-alias umount='sudo umount'
 
 # vim: filetype=bash
