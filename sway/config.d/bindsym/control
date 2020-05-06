@@ -1,0 +1,18 @@
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# start dmenu
+bindsym $mod+i exec dmenu_run -nb '#000000' -sb '#000000' -nf '#444444' -sf '#ffffff'
+
+# kill focused window
+bindsym $mod+Shift+B kill
+
+# reload the configuration file
+bindsym $mod+Shift+X reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+O restart
+
+bindsym $mod+BackSpace       exec ([[ $(echo -e "yes\nno" | dmenu -p "logout?") == yes ]] && swaymsg exit)
+bindsym $mod+Shift+BackSpace exec ([[ $(echo -e "yes\nno" | dmenu -p "shutdown?") == yes ]] && shutdown now)
+bindsym $mod+mod1+BackSpace  exec ([[ $(echo -e "yes\nno" | dmenu -p "reboot?") == yes ]] && reboot)

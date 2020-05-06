@@ -1,0 +1,18 @@
+# Define modes
+
+mode "resize" {
+        bindsym t resize shrink width 10 px or 10 ppt
+        bindsym s resize grow   height 10 px or 10 ppt
+        bindsym r resize shrink height 10 px or 10 ppt
+        bindsym n resize grow   width 10 px or 10 ppt
+
+        bindsym Shift+T move left
+        bindsym Shift+S move down
+        bindsym Shift+R move up
+        bindsym Shift+N move right
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+o mode "default"
+}
+bindsym $mod+o mode "resize"
