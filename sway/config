@@ -1,212 +1,158 @@
-# Default config for sway
+# i3 config file (v4)
 #
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-# Your preferred terminal emulator
-set $term kitty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+focus_follows_mouse no
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+# start a terminal
+bindsym $mod+Return exec kitty
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+# kill focused window
+bindsym $mod+Shift+B kill
 
-### Key bindings
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym --to-code $mod+Return exec $term
+# start dmenu (a program launcher)
+# Please use colors from Xresources another day.
+bindsym $mod+i exec dmenu_run -nb '#000000' -sb '#000000' -nf '#444444' -sf '#ffffff'
 
-    # Kill focused window
-    bindsym --to-code $mod+Shift+q kill
+# change focus
+bindsym $mod+t focus left
+bindsym $mod+s focus down
+bindsym $mod+r focus up
+bindsym $mod+n focus right
 
-    # Start your launcher
-    bindsym --to-code $mod+d exec $menu
+# move focused window
+bindsym $mod+Shift+T move left
+bindsym $mod+Shift+S move down
+bindsym $mod+Shift+R move up
+bindsym $mod+Shift+N move right
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+# Horizontal or Vertical split
+bindsym $mod+rightsinglequotemark split h
+bindsym $mod+period split v
 
-    # Reload the configuration file
-    bindsym --to-code $mod+Shift+c reload
+# enter fullscreen mode for the focused container
+bindsym $mod+e fullscreen toggle
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
-    # Move your focus around
-    bindsym --to-code $mod+$left focus left
-    bindsym --to-code $mod+$down focus down
-    bindsym --to-code $mod+$up focus up
-    bindsym --to-code $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym --to-code $mod+Left focus left
-    bindsym --to-code $mod+Down focus down
-    bindsym --to-code $mod+Up focus up
-    bindsym --to-code $mod+Right focus right
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+u layout stacking
+bindsym $mod+eacute layout tabbed
+bindsym $mod+p layout toggle split
 
-    # Move the focused window with the same, but add Shift
-    bindsym --to-code $mod+Shift+$left move left
-    bindsym --to-code $mod+Shift+$down move down
-    bindsym --to-code $mod+Shift+$up move up
-    bindsym --to-code $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym --to-code $mod+Shift+Left move left
-    bindsym --to-code $mod+Shift+Down move down
-    bindsym --to-code $mod+Shift+Up move up
-    bindsym --to-code $mod+Shift+Right move right
-#
-# Workspaces:
-#
-    # Switch to workspace
-    bindsym --to-code $mod+1 workspace 1
-    bindsym --to-code $mod+2 workspace 2
-    bindsym --to-code $mod+3 workspace 3
-    bindsym --to-code $mod+4 workspace 4
-    bindsym --to-code $mod+5 workspace 5
-    bindsym --to-code $mod+6 workspace 6
-    bindsym --to-code $mod+7 workspace 7
-    bindsym --to-code $mod+8 workspace 8
-    bindsym --to-code $mod+9 workspace 9
-    bindsym --to-code $mod+0 workspace 10
-    # Move focused container to workspace
-    bindsym --to-code $mod+Shift+1 move container to workspace 1
-    bindsym --to-code $mod+Shift+2 move container to workspace 2
-    bindsym --to-code $mod+Shift+3 move container to workspace 3
-    bindsym --to-code $mod+Shift+4 move container to workspace 4
-    bindsym --to-code $mod+Shift+5 move container to workspace 5
-    bindsym --to-code $mod+Shift+6 move container to workspace 6
-    bindsym --to-code $mod+Shift+7 move container to workspace 7
-    bindsym --to-code $mod+Shift+8 move container to workspace 8
-    bindsym --to-code $mod+Shift+9 move container to workspace 9
-    bindsym --to-code $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym --to-code $mod+b splith
-    bindsym --to-code $mod+v splitv
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
 
-    # Switch the current container between different layout styles
-    bindsym --to-code $mod+s layout stacking
-    bindsym --to-code $mod+w layout tabbed
-    bindsym --to-code $mod+e layout toggle split
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
 
-    # Make the current focus fullscreen
-    bindsym --to-code $mod+f fullscreen
+# focus the parent container
+bindsym $mod+a focus parent
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym --to-code $mod+Shift+space floating toggle
+# focus the child container
+#bindsym $mod+d focus child
 
-    # Swap focus between the tiling area and the floating area
-    bindsym --to-code $mod+space focus mode_toggle
+# default mode for i3 is tabbed
+workspace_layout tabbed
 
-    # Move focus to the parent container
-    bindsym --to-code $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
+# Don’t bother me marking windows as urgent
+focus_on_window_activation none
 
-    # Move the currently focused window to the scratchpad
-    bindsym --to-code $mod+Shift+minus move scratchpad
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym --to-code $mod+minus scratchpad show
-#
-# Resizing containers:
-#
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+quotedbl        workspace $ws1
+bindsym $mod+guillemotleft   workspace $ws2
+bindsym $mod+guillemotright  workspace $ws3
+bindsym $mod+parenleft       workspace $ws4
+bindsym $mod+parenright      workspace $ws5
+bindsym $mod+at              workspace $ws6
+bindsym $mod+plus            workspace $ws7
+bindsym $mod+minus           workspace $ws8
+bindsym $mod+slash           workspace $ws9
+bindsym $mod+asterisk        workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+X reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+O restart
+
+bindsym $mod+BackSpace       exec ([[ $(echo -e "yes\nno" | dmenu -p "logout?") == yes ]] && swaymsg exit)
+bindsym $mod+Shift+BackSpace exec ([[ $(echo -e "yes\nno" | dmenu -p "shutdown?") == yes ]] && shutdown now)
+bindsym $mod+mod1+BackSpace  exec ([[ $(echo -e "yes\nno" | dmenu -p "reboot?") == yes ]] && reboot)
+
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym --to-code $left resize shrink width 10px
-    bindsym --to-code $down resize grow height 10px
-    bindsym --to-code $up resize shrink height 10px
-    bindsym --to-code $right resize grow width 10px
+        bindsym t resize shrink width 10 px or 10 ppt
+        bindsym s resize grow   height 10 px or 10 ppt
+        bindsym r resize shrink height 10 px or 10 ppt
+        bindsym n resize grow   width 10 px or 10 ppt
 
-    # Ditto, with arrow keys
-    bindsym --to-code Left resize shrink width 10px
-    bindsym --to-code Down resize grow height 10px
-    bindsym --to-code Up resize shrink height 10px
-    bindsym --to-code Right resize grow width 10px
+        bindsym Shift+T move left
+        bindsym Shift+S move down
+        bindsym Shift+R move up
+        bindsym Shift+N move right
 
-    # Return to default mode
-    bindsym --to-code Return mode "default"
-    bindsym --to-code Escape mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+o mode "default"
 }
-bindsym --to-code $mod+r mode "resize"
+bindsym $mod+o mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+# i3 colors
+# Would be interesting to use set_from_resource $var res fallback in the future.
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #000000 #ffffff #2e9ef4   #000000
+client.focused_inactive #000000 #000000 #ffffff #484e50   #000000
+client.unfocused        #000000 #000000 #444444 #292d2e   #000000
+client.urgent           #000000 #000000 #ffffff #900000   #000000
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
+
+client.background       #ffffff
+
+# set some windows floating by default.
+no_focus   [window_role="pop_up"]
+for_window [window_role="pop_up"]      floating enable
+for_window [window_role="task_dialog"] floating enable
+floating_maximum_size 0 x 0
+
+# set windows borderless by default
+default_border    none
+hide_edge_borders both
+
 bar {
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command while date +'%a %d %b %Y %T %Z'; do sleep 1; done
 
     colors {
         statusline #ffffff
