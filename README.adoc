@@ -4,4 +4,4 @@ Please switch to another branch in regards to your current setup::
 
 * `origin/i3` → using the famous X11 tiling windows manager
 * `origin/sway` → using the i3 alternative for wayland
-* `origin/default` → old legacy code (configuration)
+* `origin/legacy` → old configuration file management
