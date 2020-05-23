@@ -1,7 +1,6 @@
 alias ls='ls --color=auto --group-directories-first'
 alias tree='tree -C --dirsfirst -I .git'
 alias sl='sl -a'
-alias mutt='neomutt'
 alias journal='$HOME/.config/journal/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/point-fichiers'
