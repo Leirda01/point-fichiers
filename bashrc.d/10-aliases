@@ -1,0 +1,3 @@
+alias tymux='tmux new-session "tmux source-file ~/.config/tmux/profanity.conf"'
+
+# vim: filetype=bash
