@@ -1,0 +1,5 @@
+= tmux configuration
+
+== sources
+
+* https://profanity-im.github.io/blog/post/how-to-run-profanity-instances-within-tmux/[tmux & profanity].
