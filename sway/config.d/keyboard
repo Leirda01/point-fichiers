@@ -1,0 +1,5 @@
+input * {
+	xkb_layout fr
+	xkb_variant bepo_afnor
+	xkb_options caps:swapescape
+}

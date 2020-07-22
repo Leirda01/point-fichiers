@@ -1,5 +1,30 @@
-= tmux configuration
+== Installation
 
-== sources
+[source,bash]
+----
+git clone git@github.com/Leirda01/point-fichiers.git &&
+cd point-fichiers;
+./setup.sh
+----
 
-* https://profanity-im.github.io/blog/post/how-to-run-profanity-instances-within-tmux/[tmux & profanity].
+Créé un lien symbolique pour les fichiers cachés dans $HOME
+Créé un lien symbolique pour tous les autres dans $HOME/.config
+On backup tous les fichiers portant le même nom avec `~` comme suffixe.
+
+== À faire
+
+* `i3`
+** [ ] Choisir le nom d’un nouveau workspace, le modifier dynamiquement.
+** [ ] Naviguer parmis les fenêtre en les désignant par nom.
+** [ ] Permettre de désigner un workspace sur l’écran secondaire.
+** [ ] Créer un workspace par défaut « HUB » pour afficher des infos et des détails à propos de X.
+* `setup.sh`
+** [ ] « ``sed``er » les fichiers qui contiennent des chemins absolus et autres aberrations.
+** [ ] Se débarrasser du dossier `run/` qui ne sert pas à grand chose…
+
+== Sources :
+
+* https://artisan.karma-lab.net/modifier-taille-polices-durxvt[Taille de la police du terminal]
+* https://github.com/yaf/dotfiles[Tout dans un « bashrc.d/ »]
+* http://bepo.fr/wiki/Mpv[config pour mpv]
+* https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation[vim-plug automatique]

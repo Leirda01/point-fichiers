@@ -1,0 +1,18 @@
+# set some windows floating by default.
+no_focus   [window_role="pop_up"]
+for_window [window_role="pop_up"]      floating enable
+for_window [window_role="task_dialog"] floating enable
+floating_maximum_size 0 x 0
+
+# set windows borderless by default
+default_border    none
+hide_edge_borders both
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+floating_modifier $mod normal
+
+focus_follows_mouse no
+title_align center
+workspace_layout tabbed
+focus_on_window_activation none

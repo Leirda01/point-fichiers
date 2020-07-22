@@ -1,0 +1,32 @@
+# change focus
+bindsym $mod+t focus left
+bindsym $mod+s focus down
+bindsym $mod+r focus up
+bindsym $mod+n focus right
+
+# move focused window
+bindsym $mod+Shift+T move left
+bindsym $mod+Shift+S move down
+bindsym $mod+Shift+R move up
+bindsym $mod+Shift+N move right
+
+# Horizontal or Vertical split
+bindsym $mod+rightsinglequotemark split h
+bindsym $mod+period split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+e fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+u layout stacking
+bindsym $mod+eacute layout tabbed
+bindsym $mod+p layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
