@@ -1,4 +1,3 @@
-=======
 alias ls='ls --color=auto --group-directories-first'
 alias tree='tree -C --dirsfirst -I .git'
 alias sl='sl -a'
@@ -6,7 +5,8 @@ alias journal='$HOME/.config/journal/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/point-fichiers'
 alias batt='cat /sys/class/power_supply/BAT0/capacity #'
-alias tymux='tmux new-session "tmux source-file ~/.config/tmux/profanity.conf"'
+
+alias tymux='tmux new "tmux source $HOME/.config/tmux/profanity.conf"'
 
 alias wherami='pwd'
 
