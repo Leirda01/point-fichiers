@@ -1,4 +1,4 @@
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --color=auto --group-directories-first --sort=extension'
 alias tree='tree -C --dirsfirst -I .git'
 alias sl='sl -a'
 alias journal='$HOME/.config/journal/journal'
