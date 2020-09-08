@@ -6,6 +6,7 @@ runtime global_options.vim
 
 call plug#begin('~/.config/vim-plugin')
 
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'sheoak/vim-bepoptimist'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
