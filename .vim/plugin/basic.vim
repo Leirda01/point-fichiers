@@ -19,4 +19,3 @@ set noswapfile
 
 filetype plugin indent on
 syntax on
-colorscheme purify
