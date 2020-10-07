@@ -1,12 +1,10 @@
 function prompt {
   if [[ $COLUMNS -ge 90 ]]; then
-    if [[ $UID -gt 0 ]]; then
-      PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]'
-    else
-      PS1='\[$reset\][\[$red\]\u@\h\[$white\]]\[$yellow\]# \[$reset\]'
-    fi
+      [[ $UID -gt 0 ]] && PS1='\[$reset\][\[$cyan\]\u@\h \[$green\]\W\[$white\]]\[$yellow\]$ \[$reset\]' \
+                       || PS1='\[$reset\][\[$red\]\u@\h\[$white\]]\[$yellow\]# \[$reset\]'
   else
-    PS1='\[$reset\]\[$yellow\]$ \[$reset\]'
+      [[ $UID -gt 0 ]] && PS1='\[$reset\]\[$yellow\]$ \[$reset\]' \
+                       || PS1='\[$reset\]\[$yellow\]# \[$reset\]'
   fi
 }
 
