@@ -5,7 +5,6 @@ alias journal='$HOME/.config/journal/journal'
 alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/point-fichiers'
 alias batt='cat /sys/class/power_supply/BAT0/capacity #'
-
 alias tymux='tmux new "tmux source $HOME/.config/tmux/profanity.conf"'
 
 alias wherami='pwd'
