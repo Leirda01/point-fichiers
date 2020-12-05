@@ -10,6 +10,6 @@ alias tymux='tmux new "tmux source $HOME/.config/tmux/profanity.conf"'
 
 alias wherami='pwd'
 
-alias please='sudo'
+alias please='sudo "$BASH" -c "$(history -p !!)"'
 
 # vim: filetype=bash
