@@ -1,35 +1,35 @@
 #!/usr/bin/env bash
 
 if [[ ${0%/*} != . ]]; then
-  echo Please run "${0#./}" from it directory instead.
-  exit 1
+    echo Please run "${0#./}" from it directory instead.
+    exit 1
 fi
 
 echo ========MAKE SYMLINKS========
 
 [[ -d $HOME/.config ]] || mkdir "$HOME/.config"
 for config in $(ls -A); do
-  case $config in
-    ("setup.sh" | ".git" | ".gitignore" | "README.adoc" | "run" )
-      echo JUNK → $config ignored.
-      ;;
-    (.*)
-      if [[ $config -ef $HOME/$config ]]; then
-        echo DOT  → $config already in $HOME
-      else
-        ln -s -b $(pwd)/$config $HOME
-        echo DOT  → $config now in $HOME
-      fi
-      ;;
-    (*)
-      if [[ $config -ef $HOME/.config/$config ]]; then
-        echo CONF → $config already in $HOME/.config
-      else
-        ln -s -b $(pwd)/$config $HOME/.config/
-        echo CONF → $config now in $HOME/.config
-      fi
-      ;;
-  esac
+    case $config in
+        ("setup.sh" | ".git" | ".gitignore" | "README.adoc" | "run" )
+            printf "JUNK → %s ignored\n" "$config"
+            ;;
+        (.*)
+            if [[ $config -ef $HOME/$config ]]; then
+                printf "DOT  → %s already in %s\n" "$config" "$HOME"
+            else
+                ln -s -b $(pwd)/$config $HOME
+                printf "DOT  → %s now in %s!\n" "$config" "$HOME"
+            fi
+            ;;
+        (*)
+            if [[ $config -ef $HOME/.config/$config ]]; then
+                printf "CONF → %s already in %s/.config\n" "$config" "$HOME"
+            else
+                ln -s -b $(pwd)/$config $HOME/.config/
+                printf "CONF → %s now in %s/.config!\n" "$config" "$HOME"
+            fi
+            ;;
+    esac
 done
 
 echo =====MAKE COMMANDS IN RUN=====
