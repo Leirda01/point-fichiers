@@ -1,0 +1,24 @@
+###############
+# Identity
+#
+set realname = "Adriel"
+set from = "adrieldj@orange.fr"
+set sendmail = "/usr/bin/msmtp -a adriel"
+
+set folder      = ~/mail         # this has the shortcut '+' or '='
+set spoolfile   = "+/inbox"      # This has the shortcut '!'
+set record      = "+/sent"
+set trash       = "+/trash"
+set postponed   = "+/drafts"
+
+mailboxes +sent +drafts +trash
+
+set imap_user = "adrieldj@orange.fr"
+set imap_pass = "`pass adrieldj/orange.fr`"
+
+set folder = imaps://imap.orange.fr/
+set spoolfile = "+inbox"
+
+mailboxes +inbox
+
+# vim: filetype=muttrc

@@ -1,0 +1,3 @@
+text/html; elinks -dump; copiousoutput
+image/*; feh %s &; copiousoutput
+application/pdf; zathura %s &; copiousoutput

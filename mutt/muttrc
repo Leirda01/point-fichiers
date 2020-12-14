@@ -1,0 +1,75 @@
+#
+# Starter muttrc file, with just a few suggestions and settings.
+#
+# This file purposely doesn't include hooks, keybinding, macros, colors, etc.
+# Read the manual, explore, and have fun!
+#
+
+set mail_check = 60
+
+source ~/.config/mutt/accounts/adriel
+
+###############
+# Pager settings
+#
+ignore *
+unignore From Message-ID Date To Cc Bcc Subject
+
+set pager_stop
+unset markers
+
+#################
+# Sidebar settings
+#
+bind index,pager B sidebar-toggle-visible
+set mail_check_stats
+
+# Prefer plain text to html.
+# However, for brain dead clients that bundle attachments inside a
+alternative_order text/html text/enriched text/plain text application/postscript image/*
+
+# Consult mime.types for determining types of these attachments
+mime_lookup application/octet-stream
+
+# This requires a ~/.mailcap entry with the copiousoutput flag, such as:
+# text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
+set mailcap_path = ~/.config/mutt/mailcap
+auto_view text/html
+auto_view image/*
+auto_view multipart/alternative
+auto_view application/pdf
+
+###############
+# Index settings
+#
+set sort = threads
+
+###############
+# Message composition settings
+#
+set editor = "/usr/bin/vim"
+set edit_headers
+# This doesn't work for whatever reason
+# Need to investigate
+# For now, change content-type manually via ctrl-t before sending mail
+##set content_type = "text/enriched"
+
+set mime_type_query_command = "xdg-mime query filetype"
+
+# msmtp is a solid SMTP client.
+# mutt also has built-in SMTP, or you can use an MTA like exim4 or postfix.
+set sendmail = "/usr/bin/msmtp"
+
+# lbdb is a versatile contact query tool.
+# Invoke via ctrl-t in an address prompt
+set query_command = "/usr/bin/abook --mutt-query '%s'"
+
+###############
+# GnuPG
+#
+unset crypt_use_gpgme
+source ~/.config/mutt/gpg.rc
+set pgp_default_key = "90703D7FEB6C116ABC54BF1181B2ECACD9EB4779"
+set crypt_autosign = yes
+set crypt_opportunistic_encrypt
+set postpone_encrypt
