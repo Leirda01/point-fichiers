@@ -1,0 +1,22 @@
+# Features not used here include logging, timeouts,
+# SOCKS proxies, TLS parameters, Delivery Status Notification
+# (DSN) settings, and more.
+
+defaults
+
+port 465
+auth on
+tls on
+tls_starttls off
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+
+account adriel
+host smtp.orange.fr
+from adrieldj@orange.fr
+user adrieldj@orange.fr
+passwordeval pass adrieldj/orange.fr
+
+# Set a default account
+account default : adriel
+
+# vim: filetype=msmtp
