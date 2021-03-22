@@ -14,9 +14,8 @@ account adriel
 host smtp.orange.fr
 from adrieldj@orange.fr
 user adrieldj@orange.fr
-passwordeval pass adrieldj/orange.fr
+passwordeval pass mail/adrieldj@orange.fr
 
-# Set a default account
 account default : adriel
 
 # vim: filetype=msmtp

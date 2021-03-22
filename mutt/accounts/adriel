@@ -14,7 +14,7 @@ set postponed   = "+/drafts"
 mailboxes +sent +drafts +trash
 
 set imap_user = "adrieldj@orange.fr"
-set imap_pass = "`pass adrieldj/orange.fr`"
+set imap_pass = "`pass mail/adrieldj@orange.fr`"
 
 set folder = imaps://imap.orange.fr/
 set spoolfile = "+inbox"
