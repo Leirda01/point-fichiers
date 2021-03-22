@@ -10,4 +10,6 @@ function prompt {
 
 PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s\007" "${PWD}"; prompt'
 
+PS4=$(printf "${bold}${red}+${reset} ")
+
 # vim: filetype=bash
