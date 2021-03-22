@@ -6,5 +6,3 @@ unset PROMPT_COMMAND
 for file in $HOME/.config/bashrc.d/*; do
   source $file
 done
-unset _file
-
