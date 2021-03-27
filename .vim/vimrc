@@ -6,12 +6,16 @@ runtime global_options.vim
 
 call plug#begin('~/.config/vim-plugin')
 
-Plug 'svermeulen/vim-easyclip'
+Plug 'greyblake/vim-preview'
+
 Plug 'sheoak/vim-bepoptimist'
+
+Plug 'svermeulen/vim-easyclip'
+
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround', { 'do': 'let g:surround_no_mappings' }
-Plug 'vim/killersheep'
-Plug 'greyblake/vim-preview'
+
+Plug 'ziglang/zig.vim' , { 'do': 'let g:zig_fmt_autosave = 0' }
 
 call plug#end()
