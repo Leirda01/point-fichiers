@@ -2,12 +2,12 @@ alias ls='ls --color=auto --group-directories-first --sort=extension'
 alias tree='tree -C --dirsfirst -I .git'
 alias sl='sl -a'
 alias journal='$HOME/.config/journal/journal'
-alias exercism='$HOME/exercism/bin/exercism'
 alias dot='cd $HOME/.config/point-fichiers'
 alias batt='cat /sys/class/power_supply/BAT0/capacity #'
 alias tymux='tmux new "tmux source $HOME/.config/tmux/profanity.conf"'
+alias mess='shuf'
 
-alias wherami='pwd'
+alias whereami='pwd'
 
 alias please='sudo "$BASH" -c "$(history -p !!)"'
 
