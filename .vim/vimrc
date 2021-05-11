@@ -14,8 +14,16 @@ Plug 'svermeulen/vim-easyclip'
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround', { 'do': 'let g:surround_no_mappings' }
+Plug 'tpope/vim-surround',
+            \ { 'do': ':let g:surround_no_mappings' }
 
-Plug 'ziglang/zig.vim' , { 'do': 'let g:zig_fmt_autosave = 0' }
+Plug 'ziglang/zig.vim',
+            \ { 'for': 'zig'
+            \ , 'do': ':let g:zig_fmt_autosave = 0'
+            \ }
+
+Plug 'frazrepo/vim-rainbow',
+            \ { 'for': [ 'clojure', 'scheme' ]
+            \ }
 
 call plug#end()

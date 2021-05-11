@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export PATH="${PATH}:$HOME/.local/bin/:$HOME/.cargo/bin/"
+export PATH="${PATH}:$HOME/.gem/ruby/2.7.0/bin/"
 
 export EDITOR="/usr/bin/vim"
 
